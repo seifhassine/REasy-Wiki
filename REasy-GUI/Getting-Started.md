@@ -3,8 +3,8 @@
 # Getting Started: Setup REasy
 
 Welcome to the REasy GUI! This guide will help you get up and running.
-
----
+<br>
+<br>
 
 ## 1. Download or Build REasy
 
@@ -21,14 +21,15 @@ You can get REasy in two ways:
 - Visit the [REasy GitHub repository](#) for source code and build instructions.
 - Follow the build steps in the repository's README to compile REasy yourself.
 
----
+
+<br>
 
 ## 2. Launching REasy
 
 - Double-click `REasy_x64.exe` (or the appropriate executable for your OS).
 - The main GUI should appear.
 
----
+<br>
 
 ## 3. Configure REasy
 
@@ -38,13 +39,13 @@ You can get REasy in two ways:
 - Adjust any other preferences to your liking.
 - Save your configuration by clicking OK.
 
----
+<br>
 
 ## 4. Start Modding
 
 - Drag and Drop any supported file into REasy. You can find an updated list of supported files [here](https://github.com/seifhassine/REasy?tab=readme-ov-file#features).
 
----
+<br>
 
 ## Troubleshooting
 
