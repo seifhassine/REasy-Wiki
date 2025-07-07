@@ -5,8 +5,8 @@
 This section contains guides and documentation for the REasy graphical user interface and its features.
 
 - [Getting Started: Setup REasy](./Getting-Started.md)
-- [Features](#)
-- [Usage Guides](#)
+- [..](#)
+- [..](#)
 
 _More content coming soon._
 
