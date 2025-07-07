@@ -1,4 +1,4 @@
-[⬅️ Back to Home](../README.md)
+[⬅️ Back](../README.md)
 
 # Game-Specific Documentation
 
@@ -15,4 +15,4 @@ This section contains technical documentation and guides for specific games supp
 
 ---
 
-[⬅️ Back to Home](../README.md) | [⬆️ Top](#games)
+[⬅️ Back](../README.md) | [⬆️ Top](#games)

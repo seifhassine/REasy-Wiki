@@ -1,4 +1,4 @@
-[⬅️ Back to Home](../README.md)
+[⬅️ Back](../README.md)
 
 # REasy GUI Documentation
 
@@ -12,4 +12,4 @@ _More content coming soon._
 
 ---
 
-[⬅️ Back to Home](../README.md) | [⬆️ Top](#reasy-gui)
+[⬅️ Back](../README.md) | [⬆️ Top](#reasy-gui)
