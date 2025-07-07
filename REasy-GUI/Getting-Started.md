@@ -33,7 +33,7 @@ You can get REasy in two ways:
 
 ## 3. Configure REasy
 
- <a href="url"><img src="https://github.com/user-attachments/assets/81bfaf66-7631-4fc2-b800-b214f0187357" align="left" height="300" width="300" ></a>
+ <p><img src="https://github.com/user-attachments/assets/81bfaf66-7631-4fc2-b800-b214f0187357" align="left" height="300" width="300" ></p>
 
 <br>
 
