@@ -1,3 +1,5 @@
+[⬅️ Back to Home](../README.md)
+
 # REasy GUI Documentation
 
 This section contains guides and documentation for the REasy graphical user interface and its features.
