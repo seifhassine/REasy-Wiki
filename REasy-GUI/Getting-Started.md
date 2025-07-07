@@ -33,13 +33,25 @@ You can get REasy in two ways:
 
 ## 3. Configure REasy
 
-- On first launch, go to **File**>**Settings**.
-- Set up the **RSZ JSON path** and select a template from the REasy folder (required for RSZ files (PFB/SCN/User)).
-- **Game version** and **Translation Target Language** are currently relevant to RSZ files only.
-- Adjust any other preferences to your liking.
-- Save your configuration by clicking OK.
+ <a href="url"><img src="https://github.com/user-attachments/assets/81bfaf66-7631-4fc2-b800-b214f0187357" align="left" height="300" width="300" ></a>
 
 <br>
+
+- On first launch, go to **File**>**Settings**.
+
+- Set up the **RSZ JSON path** and select a template from the REasy folder (required for RSZ files (PFB/SCN/User)).
+ 
+- **Game version** and **Translation Target Language** are currently relevant to RSZ files only.
+ 
+- Adjust any other preferences to your liking.
+ 
+- Save your configuration by clicking OK.
+
+
+<br>
+
+<br>
+
 
 ## 4. Start Modding
 
