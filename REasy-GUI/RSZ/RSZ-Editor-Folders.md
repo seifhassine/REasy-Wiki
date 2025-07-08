@@ -15,8 +15,10 @@
 
 ---
 
+## Folder Types
+
 <details>
-<summary><strong>Folder Types</strong></summary>
+<summary>Show/Hide</summary>
 
 In RSZ files, Folders may:
 
@@ -43,8 +45,10 @@ In RSZ files, Folders may:
 
 ## REasy Folder Operations
 
+### Create A Folder
+
 <details>
-<summary><strong>Create A Folder</strong></summary>
+<summary>Show/Hide</summary>
 
 You can create a Folder either:
 
@@ -63,8 +67,10 @@ You can create a Folder either:
 
 ---
 
+### Delete A Folder
+
 <details>
-<summary><strong>Delete A Folder</strong></summary>
+<summary>Show/Hide</summary>
 
 <br>
 
@@ -78,8 +84,10 @@ Right click the Folder then choose **Delete Folder**:
 
 ---
 
+### Create A Child GameObject
+
 <details>
-<summary><strong>Create A Child GameObject</strong></summary>
+<summary>Show/Hide</summary>
 
 <br>
 
@@ -104,8 +112,10 @@ You will see the new GameObject in the **children** node of your Folder:
 
 --- 
 
+### Paste GameObject into Folder
+
 <details>
-<summary><strong>Paste GameObject into Folder</strong></summary>
+<summary>Show/Hide</summary>
 
 If you have previously copied a GameObject, you can paste it as a child in your Folder.
 It will then appear in the **children** node.
@@ -115,8 +125,10 @@ It will then appear in the **children** node.
 
 ---
 
+### Translate Folder Name
+
 <details>
-<summary><strong>Translate Folder Name</strong></summary>
+<summary>Show/Hide</summary>
 
 You can translate names of Folders (make sure to choose your preferred language in **File**>**Settings**).
 
@@ -135,8 +147,10 @@ You will then see the name in your chosen language (English here):
 
 ---
 
+### Enable/Disable Folders
+
 <details>
-<summary><strong>Enable/Disable Folders</strong></summary>
+<summary>Show/Hide</summary>
 
 There are usually 3 toggles (**Update**, **Draw** and **Standby**).
 
