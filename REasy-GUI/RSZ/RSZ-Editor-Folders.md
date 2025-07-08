@@ -20,6 +20,8 @@
 <details>
 <summary>Show/Hide</summary>
 
+<br>
+
 In RSZ files, Folders may:
 
 - Be empty. 
@@ -50,6 +52,9 @@ In RSZ files, Folders may:
 <details>
 <summary>Show/Hide</summary>
 
+<br>
+
+
 You can create a Folder either:
 
 - By right-clicking the main "Folders" node and creating a normal Folder:
@@ -74,6 +79,9 @@ You can create a Folder either:
 
 <br>
 
+
+<br>
+
 When deleting a Folder, all of its children will be deleted (nested sub-Folders and GameObjects). 
 
 Right click the Folder then choose **Delete Folder**:
@@ -88,6 +96,9 @@ Right click the Folder then choose **Delete Folder**:
 
 <details>
 <summary>Show/Hide</summary>
+
+<br>
+
 
 <br>
 
@@ -117,6 +128,9 @@ You will see the new GameObject in the **children** node of your Folder:
 <details>
 <summary>Show/Hide</summary>
 
+<br>
+
+
 If you have previously copied a GameObject, you can paste it as a child in your Folder.
 It will then appear in the **children** node.
 
@@ -129,6 +143,9 @@ It will then appear in the **children** node.
 
 <details>
 <summary>Show/Hide</summary>
+
+<br>
+
 
 You can translate names of Folders (make sure to choose your preferred language in **File**>**Settings**).
 
@@ -151,6 +168,9 @@ You will then see the name in your chosen language (English here):
 
 <details>
 <summary>Show/Hide</summary>
+
+<br>
+
 
 There are usually 3 toggles (**Update**, **Draw** and **Standby**).
 
