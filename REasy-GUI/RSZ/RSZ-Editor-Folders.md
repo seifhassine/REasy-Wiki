@@ -2,6 +2,22 @@
 
 # Folders
 
+## Table of Contents
+
+- [Folder Types](#folder-types)
+- [REasy Folder Operations](#reasy-folder-operations)
+  - [Create A Folder](#create-a-folder)
+  - [Delete A Folder](#delete-a-folder)
+  - [Create A Child GameObject](#create-a-child-gameobject)
+  - [Paste GameObject into Folder](#paste-gameobject-into-folder)
+  - [Translate Folder Name](#translate-folder-name)
+  - [Enable/Disable Folders](#enabledisable-folders)
+
+---
+
+<details>
+<summary><strong>Folder Types</strong></summary>
+
 In RSZ files, Folders may:
 
 - Be empty. 
@@ -19,7 +35,7 @@ In RSZ files, Folders may:
 
     <img src="../../media/populated_folder.png" alt="Populated folder" height="160"/>
 
-
+</details>
 
 ---
 
@@ -27,9 +43,8 @@ In RSZ files, Folders may:
 
 ## REasy Folder Operations
 
-
-
-### Create A Folder:
+<details>
+<summary><strong>Create A Folder</strong></summary>
 
 You can create a Folder either:
 
@@ -43,13 +58,13 @@ You can create a Folder either:
 
     <img src="../../media/create_subfolder.png" alt="Create sub-folder" />
     
-
 <br>
+</details>
 
 ---
 
-### Delete A Folder
-
+<details>
+<summary><strong>Delete A Folder</strong></summary>
 
 <br>
 
@@ -59,9 +74,12 @@ Right click the Folder then choose **Delete Folder**:
 
 <img src="../../media/create_subfolder.png" alt="Create sub-folder" />
     
----
-### Create A Child GameObject
+</details>
 
+---
+
+<details>
+<summary><strong>Create A Child GameObject</strong></summary>
 
 <br>
 
@@ -81,20 +99,24 @@ You will see the new GameObject in the **children** node of your Folder:
 
 <img src="../../media/folder_create_gameobject_3.png" alt="Create GameObject in Folder 3" />
 
-
 <br>
+</details>
 
 --- 
-### Paste GameObject into Folder
+
+<details>
+<summary><strong>Paste GameObject into Folder</strong></summary>
 
 If you have previously copied a GameObject, you can paste it as a child in your Folder.
 It will then appear in the **children** node.
 
 <br>
+</details>
 
 ---
 
-### Translate Folder Name 
+<details>
+<summary><strong>Translate Folder Name</strong></summary>
 
 You can translate names of Folders (make sure to choose your preferred language in **File**>**Settings**).
 
@@ -106,14 +128,15 @@ First, right click the Folder and choose **Translate Name**:
 
 You will then see the name in your chosen language (English here):
 
-
 <img src="../../media/translate_folder_2.png" alt="Create GameObject in Folder 3" />
 
-
 <br>
+</details>
 
 ---
-### Enable/Disable Folders
+
+<details>
+<summary><strong>Enable/Disable Folders</strong></summary>
 
 There are usually 3 toggles (**Update**, **Draw** and **Standby**).
 
@@ -121,7 +144,7 @@ When a Folder is disabled, it will not be used and none of its children will be 
 
 Make sure to have all three toggles enabled if you want a folder to be active:
 
-
 <img src="../../media/folder_toggle.png" alt="Create GameObject in Folder 3" height="220"/>
+</details>
 
 
