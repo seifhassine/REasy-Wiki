@@ -7,6 +7,18 @@
 - [What are GameObjects?](#what-are-gameobjects)
 - [GameObject Types](#gameobject-types)
 - [GameObject Operations](#gameobject-operations)
+  - [Add a New Component](#add-a-new-component)
+  - [Paste a Previously Copied Component](#paste-a-previously-copied-component)
+  - [Copy Component](#copy-component)
+  - [Delete Component](#delete-component)
+  - [Create a Child GameObject](#create-a-child-gameobject)
+  - [Copy the GameObject](#copy-the-gameobject)
+  - [Paste Another GameObject from Clipboard as a Child](#paste-another-gameobject-from-clipboard-as-a-child)
+  - [Export the GameObject as a Template to Template Manager](#export-the-gameobject-as-a-template-to-template-manager)
+  - [Translate the Name of the GameObject](#translate-the-name-of-the-gameobject)
+  - [Associate a Prefab to the GameObject (or Modify Existing Prefab Path)](#associate-a-prefab-to-the-gameobject-or-modify-existing-prefab-path)
+  - [Enable/Disable GameObject](#enabledisable-gameobject)
+  - [Delete the GameObject](#delete-the-gameobject)
 
 ---
 
