@@ -182,6 +182,11 @@ Automatically translate the GameObject's name to your preferred language.
 
 Link a prefab to the GameObject or change the path of an existing prefab association.
 
+Each GameObject can have at most **one associated prefab**.  
+
+For example, each enemy GameObject should have an associated prefab that defines the properties of that enemy, as well as which controller and components can be used for it.
+
+
 </details>
 
 ---
