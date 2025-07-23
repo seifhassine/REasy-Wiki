@@ -211,4 +211,4 @@ Remove the GameObject and all its children from the file.
 
 ---
 
-[⬅️ Back](../README.md) | [⬆️ Top](#games)
+[⬅️ Back](RSZ-Editor.md) | [⬆️ Top](#gameobjects)

@@ -184,4 +184,4 @@ Make sure to have all three toggles enabled if you want a folder to be active:
 
 ---
 
-[⬅️ Back](../README.md) | [⬆️ Top](#games)
+[⬅️ Back](RSZ-Editor.md) | [⬆️ Top](#folders)
