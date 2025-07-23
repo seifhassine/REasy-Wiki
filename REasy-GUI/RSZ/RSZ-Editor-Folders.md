@@ -182,3 +182,6 @@ Make sure to have all three toggles enabled if you want a folder to be active:
 </details>
 
 
+---
+
+[⬅️ Back](../README.md) | [⬆️ Top](#games)
