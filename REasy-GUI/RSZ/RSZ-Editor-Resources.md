@@ -73,7 +73,7 @@ If the game's RSZ template is not complete, you must manage resources manually:
 - Invalid resource paths might lead to infinite loading.
 - Using resources in instances (in **Data Block**) without registering them in **Advanced Information > Resources** will lead to infinite loading.
 - You cannot manually edit resources in games where automatic resource management is enabled. 
-- When a field of an instance contains is of type Resource, it will be marked on the right in yellow "Resource". Note that not all resource fields are yet identified since many RSZ templates are incomplete. Therefore, the absence of the yellow "Resource" marking does not necessarily mean the field is not a resource.    
+- When a field of an instance is of type Resource, it will be marked on the right in yellow "Resource". Note that not all resource fields are yet identified since many RSZ templates are incomplete. Therefore, the absence of the yellow "Resource" marking does not necessarily mean the field is not a resource.    
 ---
 
 [⬅️ Back](RSZ-Editor.md) | [⬆️ Top](#prefabs)
