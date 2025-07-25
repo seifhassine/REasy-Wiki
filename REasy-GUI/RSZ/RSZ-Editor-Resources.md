@@ -36,7 +36,7 @@ Resources occur in:
 
 Some games support automatic resource management:
 - Resources used in instances will be automatically detected and saved under **Resources** in the **Advanced Information** node each time the file is saved.
-- This is only available when all Resource fields in the game's RSZ dump are identified (e.g., Resident Evil 4 and Resident Evil 2 non-RT).
+- This is only available when all Resource fields in the game's RSZ dump are identified (currently RE4, RE2 non-RT, RE3 non-RT).
 
 <img src="../../media/automatic_resources.png" alt="Automatic Resources"/>
 
