@@ -176,7 +176,7 @@ There are usually 3 toggles (**Update**, **Draw** and **Standby**).
 
 When a Folder is disabled, it will not be used and none of its children will be active.
 
-Make sure to have all three toggles enabled if you want a folder to be active:
+Make sure to have the first 2 toggles enabled if you want a folder to be active, and the third toggle active if your folder is a reference to an SCN file (like we have in the picture below, in Scenepath):
 
 <img src="../../media/folder_toggle.png" alt="Create GameObject in Folder 3" height="220"/>
 </details>
