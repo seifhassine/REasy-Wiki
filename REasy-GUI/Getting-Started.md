@@ -78,7 +78,7 @@ Before opening files or creating your first project, it is recommended that you 
 
 From the menu bar, open:
 
-**File → [Settings](./settings.md)**
+**File → [Settings](./Settings.md)**
 
  <p align="left">
   <img src="../media/REeasy076SettingsMain.jpg"><br>
@@ -193,7 +193,7 @@ You can also select a supported UI language manually.
 
 ---
 
-## 4. Save Your [Settings](./settings.md)
+## 4. Save Your [Settings](./Settings.md)
 
 Once you have selected the correct:
 
@@ -251,6 +251,6 @@ If you believe you have found a bug, report it through the official issue tracke
 
 ---
 
-[⬅️ Back to REasy GUI Documentation](./README.md) | [Settings](./settings.md) | [⬆️ Top](#getting-started-setup-reasy)
+[⬅️ Back to REasy GUI Documentation](./README.md) | [Settings](./Settings.md) | [⬆️ Top](#getting-started-setup-reasy)
 
 
