@@ -1,4 +1,4 @@
-[⬅️ Back to REasy GUI Documentation](./README.md)
+[⬅️ Back to REasy GUI Documentation](./README.md) [⬅️ Back to REasy GUI Getting Started](./Getting-Started.md)
 
 # REasy Settings
 
@@ -9,7 +9,7 @@ Open the Settings window from:
 **File → Settings**
 
 <p align="center">
-  <img src="../media/REeasy076FontUI.jpg" width="700"><br>
+  <img src="../media/REeasy076SettingsMain.jpg" width="700"><br>
   <em>Captured in REasy 0.7.6</em>
 </p>
 
@@ -219,8 +219,6 @@ REasy can now use that Wwise installation for supported audio replacement operat
 
 </details>
 
-> A future **Audio Replacement** guide will cover using Wwise with REasy to prepare and replace game audio.
-
 ---
 
 ## Theme Color
@@ -275,12 +273,5 @@ This can normally be left at its default setting unless troubleshooting or a spe
 
 ---
 
-## Reset Settings
-
-The **Reset Settings** option restores the REasy settings to their default values.
-
-This can be useful if several settings have been changed and you want to return to the default configuration.
-
----
 
 [⬅️ Back to REasy GUI Documentation](./README.md) | [⬆️ Top](#reasy-settings)
