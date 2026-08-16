@@ -91,6 +91,22 @@ You can install more than one Wwise version through the Audiokinetic Launcher if
 <details>
 <summary><strong>Installing and Configuring Wwise</strong></summary>
 
+### Required Wwise Version by Game
+
+The Wwise version required depends on the game you are working with.
+
+| Wwise Version | Games |
+|---|---|
+| **2017.1.x** | Resident Evil 2 (`RE2`), Devil May Cry 5 (`DMC5`) |
+| **2018.1.x** | Resident Evil 3 (`RE3`) |
+| **2019.2.x** | Resident Evil Village (`RE8`), Street Fighter 6 (`SF6`) |
+| **2021.1.x** | Resident Evil 4 (`RE4`), Monster Hunter Rise (`MHRise`), Dragon's Dogma 2 (`DD2`) |
+| **2022.1.x** | Resident Evil Requiem (`RE9`), Monster Hunter Wilds (`MHWilds`) |
+| **2023.1.x** | Pragmata |
+| **No Sound Profile** | Resident Evil 2 RT (`RE2RT`), Resident Evil 3 RT (`RE3RT`), Resident Evil Resistance (`REResistance`), Resident Evil 7 (`RE7`), Resident Evil 7 RT (`RE7RT`), Monster Hunter Stories 3 (`MHST3`), Onimusha 2 (`O2`), Onimusha: Way of the Sword (`OnimushaWOTS`), Kunitsu-Gami: Path of the Goddess (`KunitsuGami`) |
+
+> **No Sound Profile** means REasy does not currently provide a configured Wwise sound profile for that game.
+> 
 <br>
 
 ### 1. Download the Audiokinetic Launcher
