@@ -27,6 +27,10 @@ New to REasy? Start here.
 
 ## Editors and Tools
 
+### Tools
+
+- [File List Generator](./File-List-Generator.md)
+
 ### RSZ Editor
 
 - [RSZ Editor (PFB / SCN / User)](./RSZ/RSZ-Editor.md)  
