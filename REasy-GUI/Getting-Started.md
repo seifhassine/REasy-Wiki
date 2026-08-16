@@ -221,7 +221,7 @@ Click **Open File**, or simply drag and drop a supported file into the REasy win
 
 This is useful when you already have an extracted game file that you want to inspect or edit.
 
-### Create a Project
+### Create a [Project](./Creating-a-New-Project.md)
 
 For working directly with a complete game installation, select:
 
@@ -231,7 +231,7 @@ Projects allow REasy to work with the game's file structure and browse files fro
 
 Project setup is covered in the next guide:
 
-**Creating Your First REasy Project**
+**Creating Your First REasy [Project](./Creating-a-New-Project.md)**
 
 ---
 
