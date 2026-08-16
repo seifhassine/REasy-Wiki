@@ -8,9 +8,7 @@ This section contains technical documentation and guides for specific games supp
 
 ## 📂 Game Index
 
-- [Resident Evil 4](#)
-- [Resident Evil 3](#)
-- [Monster Hunter Wilds](#)
+- [Resident Evil 3 (non-RT)](./Resident-Evil-3/README.md)
 
 
 ---
