@@ -245,15 +245,21 @@ Click:
 
 **Extract Paths from Memory Dump**
 
-This allows you to analyse a memory dump produced while the game is running.
+This allows you to analyse a memory dump created while the game is running.
 
-Select a supported memory dump file, such as:
+To create a memory dump in Windows:
+
+1. Open **Task Manager**.
+2. Find the running game process.
+3. Right-click the process.
+4. Select **Create memory dump file**.
+5. Wait for Windows to finish creating the dump and note the saved file location.
+
+Back in REasy, select the generated memory dump file.
 
 - `.dmp`
 - `.bin`
 - `.mdmp`
-
-For example, you could use a dump captured with a tool such as **REFramework**.
 
 REasy will process the dump for usable paths and allow the results to be saved as a `.txt` file.
 
@@ -261,7 +267,6 @@ Memory dumps can contain file paths that were loaded, referenced or held in memo
 
 > Memory dumps captured at different points in the game may contain different paths. For example, loading a particular stage, character or game mode before creating the dump can expose paths associated with that content.
 
----
 
 ## List Improvement Tools
 
