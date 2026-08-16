@@ -29,7 +29,11 @@ New to REasy? Start here.
 
 ### Tools
 
-- [File List Generator](./File-List-Generator.md)
+- [PAK Browser](./PAK-Browser.md)  
+  Browse, search and extract files directly from RE Engine PAK archives.
+
+- [File List Generator](./File-List-Generator.md)  
+  Analyse game executables, PAK files and memory dumps to create or improve `.list` files.
 
 ### RSZ Editor
 
@@ -46,7 +50,7 @@ The RSZ Editor documentation currently includes:
 
 ---
 
-_More documentation will be added over time.
+_More documentation will be added over time._
 
 ---
 
