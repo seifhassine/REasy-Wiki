@@ -3,6 +3,18 @@
 # Creating a New Project
 
 Projects allow REasy to work directly with a game's files and provide an easier way to browse, search and open files without manually extracting the entire game first.
+Compared with manually extracting files from the game's PAK archives, using a REasy project gives you a much cleaner workflow.
+
+A project:
+
+- Automatically create the correct folder structure for your mod.
+- Browse and open files directly from the game PAKs without extracting.
+- Let you choose only the files you actually want to add to the project.
+- Export the finished mod as a **Fluffy Mod Manager `.zip`**.
+- Export the finished mod as a **`.pak` file**.
+- Keep multiple projects available at the same time and switch between them as needed.
+
+This makes projects useful for both small one-file edits and larger mods containing many different files.
 
 This guide covers creating a new project from an installed game.
 
@@ -29,14 +41,16 @@ Enter a name that will make the project easy to identify later.
 
 For example:
 
-`Street Fighter 6`
-
-or:
-
-`SF6`
+- `Title Screen Project RE4`
+- `Stage Edit`
+- `Sound Replacement`
+- `Harder Difficulty Project`
+- `Comic Portraits`
+- `Better Crafting`
+- `Icon Fix`
 
 The project name does not have to match the game's executable or folder name.
-
+You can create multiple projects for the same game, so using a descriptive name makes it much easier to tell them apart in the Project Library and when switching between open projects.
 Once you have entered a name, click **OK**.
 
 <p align="left">
@@ -139,13 +153,6 @@ Your project will also be available from the **Project Library**, allowing you t
 
 Your REasy project is now ready to use.
 
-The next guide will cover working with the project browser, including:
-
-- Browsing folders
-- Searching for files
-- Opening supported files
-- Extracting files
-- Working with the Project Library
 
 ---
 
