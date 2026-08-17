@@ -1364,4 +1364,466 @@ For a simple replacement, keeping the original bank structure and Source IDs is 
 
 </details>
 
+---
+
+<details>
+<summary><strong>UI Modding</strong></summary>
+
+<br>
+
+UI modding is another major area of Street Fighter 6 modding.
+
+Most commonly edited UI assets are found beneath:
+
+```text
+product/gui/
+```
+
+One of the most important locations is:
+
+```text
+product/gui/data/
+```
+
+This folder contains a large amount of the artwork and interface data used throughout:
+
+- Fighting Ground
+- Character Select
+- Battle HUD
+- Battle Hub
+- CFN
+- World Tour
+- Avatar Arcade
+- Training
+- Tutorials
+- Music Player
+- Rankings
+- Menus
+- Online modes
+- In-match HUD elements
+
+---
+
+## Important UI File Types
+
+| File Type | Purpose |
+|---|---|
+| `.tex.241101895` | UI artwork, portraits, icons, logos, masks and other interface textures |
+| `.pfb.17` | UI Prefabs; often contain or reference textures and other interface resources |
+| `.uvs.7` | UI animation / UV layout data; can control how regions of a texture are displayed or animated |
+| `.user.2` | Structured UI and menu configuration data |
+| `.gui` | GUI layout and behaviour data |
+
+REasy can open and edit many of the file types used by the Street Fighter 6 interface.
+
+A dedicated guide for `.uvs.7` files and their practical uses can be added separately.
+
+---
+
+# `product/gui/data/`
+
+This is one of the most useful folders when searching for UI artwork.
+
+It contains many clearly named subfolders including:
+
+```text
+area_image
+avatarcreate_thumbnail
+battlehub_image
+battlehub_movie
+battlehub_screen
+battlehub_walltexture
+battletour_banner
+brand_logo
+cfn
+character_image
+commentary_image
+controller
+dialog
+emote_image
+endcard_other
+endcard_past
+equip_thumbnail
+fgcharacterguide
+fgtraining
+fgtutorial
+historymovie_logo
+item_thumbnail
+musicplayer_logo
+nationalflag
+newchallenger
+npc_face_thumbnail
+photomode
+rank
+shop_banner
+stamp
+theme
+ticker
+tips
+title
+tournamentlogo
+```
+
+Not every folder is equally important for normal UI modding, but the folder names often give a good indication of where a particular interface asset is used.
+
+---
+
+## `area_image` — Stage Artwork
+
+Stage-related UI images are stored under:
+
+```text
+product/gui/data/area_image/
+```
+
+These include artwork and thumbnails representing stages and locations in various menus.
+
+The Stage Codes table at the top of this reference can help when identifying stage-specific assets.
+
+---
+
+## `avatarcreate_thumbnail`
+
+Avatar creation thumbnails are stored beneath:
+
+```text
+product/gui/data/avatarcreate_thumbnail/
+```
+
+These are mainly images used by the Avatar Creation interface.
+
+This folder is less commonly modified than the main character, Battle HUD or match UI folders.
+
+---
+
+# `character_image` — Character UI Artwork
+
+One of the most important UI folders is:
+
+```text
+product/gui/data/character_image/
+```
+
+Character folders use a three-digit version of the normal `esf` character ID.
+
+For example:
+
+```text
+product/gui/data/character_image/001/
+```
+
+contains UI artwork for:
+
+```text
+esf001 = Ryu
+```
+
+The same numbering continues for the other fighters.
+
+The Character Codes table at the top of this reference can therefore also be used when navigating this folder.
+
+---
+
+## Avatar Arcade / `avatarvs`
+
+Within a character folder, the `avatarvs` section contains the image used when an avatar is fighting with that character's style in **Avatar Arcade**.
+
+For Ryu:
+
+```text
+product/gui/data/character_image/001/avatarvs/
+```
+
+An example texture is:
+
+```text
+tex_avatarvs_esf001_alba.tex.241101895
+```
+
+This artwork is shown for an avatar using Ryu's fighting style rather than displaying Ryu's normal character portrait.
+
+---
+
+## `battlehud` — In-Match Character Portraits
+
+Battle HUD character portraits are stored beneath:
+
+```text
+product/gui/data/character_image/001/battlehud/
+```
+
+for Ryu, with the equivalent numbered folder used for other characters.
+
+Typical files include:
+
+```text
+tex_001_1p_iam.tex.241101895
+tex_001_2p_iam.tex.241101895
+
+tex_battlehud_001_1p_iam.tex.241101895
+tex_battlehud_001_2p_iam.tex.241101895
+```
+
+These provide the **Player 1 and Player 2 portraits** used during a match.
+
+The separate P1 / P2 artwork allows the game to use different orientation or colour treatment depending on which side the character occupies.
+
+---
+
+# Character Select Portraits
+
+Character Select artwork is stored inside each character's `character_image` folder.
+
+There is an important naming quirk in the game files.
+
+For character IDs up to `029`, Capcom used the misspelled folder name:
+
+```text
+caracterselect
+```
+
+For later characters `030` to `033`, the folder name is correctly spelled:
+
+```text
+characterselect
+```
+
+This is important when searching paths because both spellings are present in the game.
+
+For example, Ryu uses:
+
+```text
+product/gui/data/character_image/001/caracterselect/
+```
+
+while later characters use:
+
+```text
+product/gui/data/character_image/030/characterselect/
+```
+
+---
+
+## Character Select Texture Variants
+
+Each character normally has six Character Select portrait textures.
+
+For Ryu:
+
+```text
+tex_esf001_face_l_l_iam.tex.241101895
+tex_esf001_face_l_m_iam.tex.241101895
+tex_esf001_face_l_s_iam.tex.241101895
+
+tex_esf001_face_r_l_iam.tex.241101895
+tex_esf001_face_r_m_iam.tex.241101895
+tex_esf001_face_r_s_iam.tex.241101895
+```
+
+The filename identifies both the **side** and **size**.
+
+### Side
+
+```text
+l = Left
+r = Right
+```
+
+### Size
+
+```text
+l = Large
+m = Medium
+s = Small
+```
+
+So:
+
+```text
+tex_esf001_face_l_l_iam.tex
+```
+
+can be read as:
+
+```text
+esf001 = Ryu
+face   = Character portrait
+l      = Left side
+l      = Large
+```
+
+while:
+
+```text
+tex_esf001_face_r_s_iam.tex
+```
+
+is:
+
+```text
+Ryu
+Right side
+Small portrait
+```
+
+These variants allow different parts of the interface to use the correct orientation and resolution.
+
+---
+
+# `newchallenger` — Here Comes a New Challenger
+
+Another popular character UI folder is:
+
+```text
+product/gui/data/character_image/001/new_challenger/
+```
+
+or the equivalent numbered character folder.
+
+This contains artwork used for the **Here Comes a New Challenger** sequence.
+
+Examples for Ryu include:
+
+```text
+tex_nextchallenger_esf001_00_00_iam.tex.241101895
+tex_nextchallenger_esf001_00_01_iam.tex.241101895
+tex_nextchallenger_esf001_00_02_iam.tex.241101895
+
+tex_nextchallenger_esf001_01_iam.tex.241101895
+tex_nextchallenger_esf001_02_iam.tex.241101895
+tex_nextchallenger_esf001_03_iam.tex.241101895
+...
+```
+
+A character can have many individual textures used by the full New Challenger presentation.
+
+---
+
+# Other Character UI Data
+
+The `character_image` folder contains many other character-specific interface resources.
+
+Depending on the character, these can include areas such as:
+
+```text
+avatarvs
+battlehud
+caracterselect / characterselect
+comicdemo
+command_resource
+endcard
+levelup
+new_challenger
+online_shop
+pub
+```
+
+These folders cover artwork used across different game modes rather than one single character portrait system.
+
+---
+
+# `product/gui/es/` — In-Match HUD
+
+Outside of `character_image`, another extremely important location is:
+
+```text
+product/gui/es/
+```
+
+`ES` is used for much of the **in-match interface**.
+
+This contains UI assets used during actual battles, including elements such as:
+
+- Vital / Health Gauge
+- Drive Gauge
+- Super Art / Critical Art gauges
+- Hit counters
+- Combo information
+- Round information
+- Win indicators
+- Player information
+- Match status elements
+- Other Battle HUD graphics
+
+For modders changing the appearance of the Fighting Ground match interface, `product/gui/es/` is one of the first places to investigate.
+
+---
+
+# UI Textures and Prefabs
+
+Although `.tex` files contain most of the visible artwork, some UI systems use Prefabs to reference those textures.
+
+A UI Prefab may contain:
+
+```text
+.pfb.17
+```
+
+and can act as a holder for one or more interface resources.
+
+This can be useful when you want to change **which texture the interface uses** rather than simply replacing the original texture file.
+
+In simple terms:
+
+```text
+PFB
+   ↓
+References UI resources
+   ↓
+TEX
+   ↓
+Visible artwork
+```
+
+This makes Prefab editing useful for more advanced UI swaps and redirects.
+
+---
+
+# UVS — UI Animation and Texture Layout
+
+Street Fighter 6 also uses:
+
+```text
+.uvs.7
+```
+
+files throughout its interface.
+
+These can be used for UI animation and for defining how different regions of a texture are displayed.
+
+A single texture may contain several interface elements, while the UVS data determines which section is shown or animated.
+
+Because UVS editing is more specialised, practical `.uvs.7` workflows will be covered in a separate guide.
+
+---
+
+## Useful Starting Points for UI Modding
+
+For most UI mods, these are good places to begin:
+
+```text
+Character portraits / artwork
+    ↓
+product/gui/data/character_image/
+
+Stage artwork
+    ↓
+product/gui/data/area_image/
+
+In-match Battle HUD
+    ↓
+product/gui/es/
+
+Music Player artwork
+    ↓
+product/gui/data/musicplayer_logo/
+
+General menu and mode artwork
+    ↓
+product/gui/data/
+```
+
+The best approach is usually to identify **where the artwork appears in the game first**, then search the corresponding GUI folder for the relevant texture, Prefab or UVS file.
+
+</details>
 [⬅️ Back to Games](../README.md) | [⬆️ Top](#street-fighter-6-file-structure-reference)
