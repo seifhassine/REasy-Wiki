@@ -244,6 +244,7 @@ Current versions use:
 
 # Common Modding Areas
 
+<a name="character-models-and-costumes"></a>
 <details>
 <summary><strong>Character Models and Costumes</strong></summary>
 
@@ -917,6 +918,7 @@ before considering a character texture replacement complete.
 
 </details>
 
+<a name="audio-modding"></a>
 <details>
 <summary><strong>Audio Modding</strong></summary>
 
@@ -1429,6 +1431,7 @@ For a simple replacement, keeping the original bank structure and Source IDs is 
 
 </details>
 
+<a name="ui-modding"></a>
 <details>
 <summary><strong>UI/HUD Modding</strong></summary>
 
