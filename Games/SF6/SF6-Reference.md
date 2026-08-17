@@ -1364,10 +1364,8 @@ For a simple replacement, keeping the original bank structure and Source IDs is 
 
 </details>
 
----
-
 <details>
-<summary><strong>UI Modding</strong></summary>
+<summary><strong>UI/HUD Modding</strong></summary>
 
 <br>
 
@@ -1826,4 +1824,5 @@ product/gui/data/
 The best approach is usually to identify **where the artwork appears in the game first**, then search the corresponding GUI folder for the relevant texture, Prefab or UVS file.
 
 </details>
+
 [⬅️ Back to Games](../README.md) | [⬆️ Top](#street-fighter-6-file-structure-reference)
