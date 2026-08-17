@@ -186,15 +186,669 @@ File versions are appended after the extension, for example:
 
 Character and costume modding is one of the most common types of Street Fighter 6 modding.
 
-The main folders used are:
+Common character mods include:
+
+- Costume colour edits
+- Texture replacements
+- Hair swaps
+- Mesh swaps
+- Removing costume parts
+- Swapping parts between outfits
+- Full costume replacements
+- Physics edits
+- Material edits
+
+The three most important locations are:
 
 ```text
 product/model/esf/
 product/charparam/
-streaming/model/esf/
+streaming/product/model/esf/
 ```
 
-More detail will be added here as the reference is expanded.
+- `product/model/esf/` — Character meshes, MDF materials, CMD colour data, chain physics and lower-resolution texture assets.
+- `product/charparam/` — Character setup and references linking body, head, hair, materials, physics and other character resources.
+- `streaming/product/model/esf/` — Full-resolution streaming character textures and related assets.
+
+---
+
+## Character and Costume Folder Structure
+
+Character model data is organised using the character's `esf` ID.
+
+For example:
+
+```text
+product/model/esf/esf009/
+```
+
+is **Cammy**.
+
+Each outfit then uses its numbered costume slot:
+
+```text
+001 = C1
+002 = C2
+003 = C3
+004 = C4
+005 = C5
+```
+
+Not every character currently has every outfit slot.
+
+**Yasmine currently has C1, C2 and C5**, making her the only current character without C3.
+
+### Characters Currently With C4
+
+- Luke
+- Jamie
+- Chun-Li
+- Kimberly
+- Juri
+- Dee Jay
+- Manon
+- Zangief
+- Cammy
+- A.K.I.
+- Elena
+
+Available costume slots may expand as additional outfits are added to the game.
+
+---
+
+## Character Model Parts
+
+Within each costume folder, numbered folders commonly separate the fighter into different model parts.
+
+| Folder | Typical Part |
+|---|---|
+| `00` | Head |
+| `01` | Body / Costume |
+| `02` | Hair |
+| `10` | Bone / shared skeletal-related model |
+
+For example:
+
+```text
+product/model/esf/esf009/001/01/
+```
+
+contains the main body resources for **Cammy C1**.
+
+The exact structure can differ depending on the fighter and outfit.
+
+---
+
+## Typical Character Mod Files
+
+A character mod may contain files such as:
+
+```text
+esf009_001_01.mesh.230110883
+esf009_001_01_v00.mdf2.31
+esf009_001_01_chain.chain.52
+
+esf009_001_cmd_001.user.2
+esf009_001_cmd_002.user.2
+esf009_001_cmd_003.user.2
+...
+esf009_001_cmd_010.user.2
+
+esf009_001_01_clothb_albd.tex.241101895
+esf009_001_01_clothb_nrrc.tex.241101895
+```
+
+A mod does not necessarily need all of these files.
+
+A simple colour mod may only replace textures or CMD files, while a full costume replacement can include meshes, MDFs, textures, physics and character scene edits.
+
+---
+
+## Important Character File Types
+
+| File Type | Purpose |
+|---|---|
+| `.mesh.230110883` | Character model geometry |
+| `.tex.241101895` | Character textures and masks |
+| `.mdf2.31` | Materials, texture assignments, shader flags and parameters |
+| `.user.2` | Structured data, including CMD costume colour data |
+| `.chain.52` | Character body, hair, clothing and accessory physics |
+| `.scn.20` | Character scene/configuration container and resource references |
+
+REasy supports these major character-modding formats with dedicated viewers or editors where applicable.
+
+---
+
+## Character Textures
+
+Character texture filenames usually identify:
+
+```text
+Character → Outfit → Part → Material → Texture Type
+```
+
+Examples from Cammy include:
+
+```text
+esf009_001_01_clothb_albd.tex.241101895
+esf009_001_01_clothb_nrrc.tex.241101895
+esf009_001_01_clothb_1_cmask.tex.241101895
+esf009_001_01_clothb_2_cmask.tex.241101895
+
+esf009_001_01_clothc_albd.tex.241101895
+esf009_001_01_clothc_nrrc.tex.241101895
+esf009_001_01_clothc_1_cmask.tex.241101895
+esf009_001_01_clothc_2_cmask.tex.241101895
+
+esf009_001_01_costume_cwmask.tex.241101895
+```
+
+These are examples of the normal naming structure used by the game.
+
+More experienced modders can use completely custom texture names, but the corresponding MDF texture paths must also be changed to reference them.
+
+---
+
+### `ALBD` — Base Colour
+
+Example:
+
+```text
+esf009_001_01_clothb_albd.tex.241101895
+```
+
+The MDF normally identifies this texture as:
+
+```text
+BaseDielectricMap
+```
+
+`ALBD` contains the main visible colour information for the material.
+
+---
+
+### `NRRC` — Normal / Roughness / Cavity
+
+Example:
+
+```text
+esf009_001_01_clothb_nrrc.tex.241101895
+```
+
+The MDF normally identifies this as:
+
+```text
+NormalRoughnessCavityMap
+```
+
+This packed texture controls surface detail and how the material reacts to lighting.
+
+It contains information associated with:
+
+- Normal detail
+- Roughness
+- Cavity / surface detail
+
+It has a major effect on how skin, cloth and other materials respond to lighting.
+
+---
+
+### `CMASK` — Costume Colour Mask
+
+Examples:
+
+```text
+esf009_001_01_clothb_1_cmask.tex.241101895
+esf009_001_01_clothb_2_cmask.tex.241101895
+```
+
+The MDF identifies these as custom colour masks.
+
+`CMASK` defines which areas of the material can be recoloured through Street Fighter 6's costume colour system.
+
+Multiple CMASK textures can be used by the same costume.
+
+They work together with the character's **CMD / CostumeMaterialData** files.
+
+In simple terms:
+
+```text
+CMASK
+   ↓
+Defines which parts can change colour
+   ↓
+CMD
+   ↓
+Defines the colours used for each colour slot
+```
+
+Costume recolouring is one of the easiest and most common forms of SF6 character modding.
+
+---
+
+### `DMASK` / `DMGMASK` — Battle Damage Mask
+
+Damage masks are used by Street Fighter 6's battle-damage system.
+
+They control where progressive battle effects can appear on the character during a match.
+
+These can include:
+
+- Dirt
+- Bruising
+- Damage colouring
+- Progressive battle wear
+
+The MDF normally exposes these through a:
+
+```text
+DamageMask
+```
+
+texture binding.
+
+---
+
+### `ATOS`
+
+The MDF identifies ATOS textures through bindings such as:
+
+```text
+AlphaTranslucentOcclusionSSSMap
+```
+
+ATOS is a packed material texture used for several surface properties including:
+
+- Alpha
+- Translucency
+- Occlusion
+- Subsurface / SSS information
+
+Because material setups can vary, checking the original texture channels together with the MDF is recommended before modifying one.
+
+---
+
+### `CWMASK`
+
+Example:
+
+```text
+esf009_001_01_costume_cwmask.tex.241101895
+```
+
+`CWMASK` is another costume-related mask used by the material system.
+
+Its exact use can depend on the costume and shader setup, so the corresponding MDF should be checked when working with it.
+
+---
+
+## MDF — Material Definition
+
+Character MDF files commonly use:
+
+```text
+.mdf2.31
+```
+
+For example:
+
+```text
+esf009_001_01_v00.mdf2.31
+```
+
+The MDF is one of the most important files for advanced character modding.
+
+It connects the mesh to:
+
+- Material parts
+- Texture paths
+- Shader types
+- Shader flags
+- Material parameters
+
+A costume body can contain many separate materials for different parts of the outfit.
+
+Examples may include:
+
+```text
+esf_Body00
+esf_Cloth_Leotard
+esf_Cloth_Beret
+esf_Cloth_Boots
+esf_Cloth_Emblem
+esf_Cloth_Gauntlet
+esf_Cloth_Pouch
+```
+
+### When Do You Need to Edit the MDF?
+
+For a simple texture replacement using the **same filename and path**, the MDF normally does not need to be changed.
+
+MDF editing becomes important when you want to:
+
+- Rename a texture
+- Redirect a material to a different texture
+- Use textures not originally assigned to that material
+- Use a different material or shader setup
+- Change material flags
+- Change material parameters
+- Change transparency behaviour
+- Change two-sided rendering
+- Add or change emissive behaviour
+- Change how costume colours are handled
+- Redirect materials for custom meshes or UV layouts
+
+Increasing the resolution of an existing texture does **not by itself** require an MDF edit if the original texture path and material binding remain unchanged.
+
+### MDF Texture Bindings
+
+The **Textures** section in REasy shows which texture is assigned to each material function.
+
+Examples include:
+
+```text
+BaseDielectricMap
+NormalRoughnessCavityMap
+AlphaTranslucentOcclusionSSSMap
+CustomizeColor_Mask
+DamageMask
+BodyMuscle_Mask
+```
+
+This makes the MDF one of the best places to check when you are unsure what a particular texture does.
+
+It is also how experienced modders can use completely custom texture filenames: the MDF is changed to reference the new texture path.
+
+### MDF Material Flags
+
+The MDF also contains flags affecting how materials are rendered.
+
+Examples include:
+
+```text
+AlphaUsed
+AlphaMaskUsed
+AlphaTestEnable
+TwoSideEnable
+ForcedTwoSideEnable
+EmissiveUsed
+ShadowCastDisable
+SSSProfileUsed
+NoRayTracing
+ForwardPrepassEnabled
+```
+
+These can be important when creating or modifying:
+
+- Transparent materials
+- Cut-out materials
+- Double-sided cloth
+- Emissive parts
+- Skin
+- Hair
+- Special costume effects
+
+### MDF Parameters
+
+The **Parameters** section contains shader and material values.
+
+Examples include:
+
+```text
+BaseColor
+
+CustomizeColor_0
+CustomizeColor_1
+CustomizeColor_2
+CustomizeColor_3
+
+DamageColor_0
+DamageColor_1
+DamageColor_2
+
+Character_LightParam
+
+AfterImage_BaseColor
+AfterImage_EmissiveColor
+
+Emit_BaseColor
+Emit_Color
+```
+
+These can affect:
+
+- Base material colour
+- Costume colours
+- Battle damage
+- Character lighting
+- Emissive effects
+- Afterimages
+- Other shader behaviour
+
+---
+
+## CMD — Costume Material Data
+
+CMD files are `.user.2` files containing costume colour configuration.
+
+For example:
+
+```text
+esf009_001_cmd_001.user.2
+esf009_001_cmd_002.user.2
+esf009_001_cmd_003.user.2
+...
+esf009_001_cmd_010.user.2
+```
+
+Each file represents one costume colour slot.
+
+For example:
+
+```text
+esf009_001_cmd_005.user.2
+```
+
+can be read as:
+
+```text
+esf009 = Cammy
+001    = C1
+005    = Colour 05
+```
+
+REasy exposes the `CostumeMaterialData` structure, allowing costume colours and related material settings to be edited.
+
+---
+
+## Chain — Character Physics
+
+Chain files commonly use:
+
+```text
+.chain.52
+```
+
+For example:
+
+```text
+esf009_001_01_chain.chain.52
+```
+
+Chain data controls much of the character's **secondary motion and physics**.
+
+This can include:
+
+- Hair movement
+- Clothing movement
+- Belts and straps
+- Accessories
+- Loose costume pieces
+- Body secondary motion
+- Breast physics
+- Butt / body jiggle
+- Other physics-driven character parts
+
+A costume may use separate chain data for the body, hair or individual costume components.
+
+When swapping or replacing character parts, the corresponding chain data may also need to be changed so the new model uses the correct physics.
+
+---
+
+## `product/charparam/`
+
+Character scene files beneath:
+
+```text
+product/charparam/
+```
+
+connect many of the fighter's assets together.
+
+An important example is:
+
+```text
+esf001v00.scn.20
+```
+
+For visual character modding, one of the most useful areas inside the scene is the **FighterVisualHolder**.
+
+### Body, Head and Hair References
+
+The FighterVisualHolder identifies resources used for model parts such as:
+
+```text
+Body
+Head
+Hair
+Bone
+```
+
+Each part can reference its own:
+
+```text
+Mesh
+MDF
+Joint Constraints
+Chain / Physics
+AO Geometry
+Havok Cloth
+```
+
+For example:
+
+```text
+Body
+Product/Model/esf/esf001/001/01/esf001_001_01.mesh
+Product/Model/esf/esf001/001/01/esf001_001_01_v00.mdf2
+
+Head
+Product/Model/esf/esf001/001/00/esf001_001_00.mesh
+Product/Model/esf/esf001/001/00/esf001_001_00_v00.mdf2
+
+Hair
+Product/Model/esf/esf001/001/02/esf001_001_02.mesh
+Product/Model/esf/esf001/001/02/esf001_001_02_v00.mdf2
+```
+
+This is particularly useful for:
+
+- Swapping hairstyles between outfits
+- Replacing a head
+- Redirecting a body to another mesh
+- Removing a costume part
+- Mixing model parts from different outfits
+- Redirecting MDF files
+- Redirecting physics data
+
+Rather than replacing the original asset itself, the character scene can sometimes be edited to point the model part to a different resource.
+
+### Footwear / Footstep Type
+
+The character visual configuration also contains:
+
+```text
+soundEquipFootType
+```
+
+Observed values include:
+
+```text
+None
+Boots
+Shoes
+Geta
+Sandal
+```
+
+This is useful when a costume mod changes the fighter's footwear.
+
+For example, changing boots to sandals or bare feet can also be accompanied by changing the footstep type rather than retaining the original footwear sound.
+
+---
+
+## Streaming Character Assets
+
+Streaming character assets are found under:
+
+```text
+streaming/product/model/esf/
+```
+
+These files are extremely important for character and costume texture modding.
+
+For many character textures, the files under the **streaming** path contain the **full-resolution texture** used by the game.
+
+Typical streaming textures include high-resolution:
+
+- Body textures
+- Clothing textures
+- Hair textures
+- Costume masks
+- Normal and material maps
+
+For texture replacement work, the normal workflow is to edit the **full-resolution streaming texture first**.
+
+For example:
+
+```text
+streaming/product/model/esf/esf009/001/...
+```
+
+Once the high-resolution texture is complete, a reduced-resolution version can then be created for the corresponding asset under:
+
+```text
+product/model/esf/
+```
+
+So for character texture mods, both locations are important:
+
+```text
+streaming/product/model/esf/
+    ↓
+Full-resolution texture
+
+product/model/esf/
+    ↓
+Reduced-resolution / non-streaming texture
+```
+
+A typical texture workflow is therefore:
+
+1. Extract and edit the full-resolution texture from `streaming/product/model/esf/`.
+2. Save the finished high-resolution replacement.
+3. Downsize the finished texture as required.
+4. Replace the matching lower-resolution texture under `product/model/esf/`.
+
+Editing only the `product` version can leave the game using the unchanged high-resolution streaming texture.
+
+Always check whether a matching texture exists under:
+
+```text
+streaming/product/model/esf/
+```
+
+before considering a character texture replacement complete.
 
 </details>
 
