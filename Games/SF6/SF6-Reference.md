@@ -175,6 +175,55 @@ File versions are appended after the extension, for example:
 .pfb.17
 ```
 
+# Understanding RE Engine File Names
+
+RE Engine files commonly use a structure such as:
+
+```text
+filename.extension.version
+```
+
+For example:
+
+```text
+20101.mov.1
+```
+
+This can be broken down as:
+
+| Part | Example | Meaning |
+|---|---|---|
+| Filename | `20101` | The name or identifier of the file |
+| Extension | `.mov` | The file type |
+| Version | `.1` | The version of that file format used by the game |
+
+A texture may look like:
+
+```text
+example.tex.241101895
+```
+
+where:
+
+- `example` is the filename.
+- `.tex` is the file type.
+- `.241101895` is the file-format version used by that game.
+
+The same applies to other common RE Engine formats.
+
+Examples include:
+
+```text
+example.user.2
+example.pfb.17
+example.mesh.230110883
+example.tex.241101895
+```
+
+Files such as `.user.2` and `.pfb.17` are especially common when working with RE Engine game data.
+
+The version suffix is important because different RE Engine games — and sometimes different revisions of the same game — can use different versions of the same file format.
+
 ---
 
 # Common Modding Areas
