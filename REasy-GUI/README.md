@@ -43,17 +43,7 @@ New to REasy? Start here.
 - [RSZ Editor (PFB / SCN / User)](./RSZ/RSZ-Editor.md)  
   View and edit RSZ-based files including `.pfb`, `.scn` and `.user` files.
 
-The RSZ Editor documentation currently includes:
-
-- [GameObjects](./RSZ/RSZ-Editor-GameObjects.md)
-- [Folders](./RSZ/RSZ-Editor-Folders.md)
-- [Prefabs](./RSZ/RSZ-Editor-Prefabs.md)
-- [Resources](./RSZ/RSZ-Editor-Resources.md)
-- [Text Finder](./RSZ/RSZ-Editor-TextFinder.md)
-
----
-
-_More documentation will be added over time._
+More documentation will be added over time.
 
 ---
 
