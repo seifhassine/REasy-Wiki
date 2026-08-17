@@ -854,4 +854,330 @@ before considering a character texture replacement complete.
 
 ---
 
+<details>
+<summary><strong>Audio Modding</strong></summary>
+
+<br>
+
+Audio modding is another major area of Street Fighter 6 modding.
+
+The most important locations are:
+
+```text
+product/sound/resource/
+product/sound/wwise/
+streaming/product/sound/wwise/
+product/message/sound/
+```
+
+These folders contain the sound-bank logic, audio media and text metadata used by the game's audio system.
+
+---
+
+## Important Audio File Types
+
+| File Type | Purpose |
+|---|---|
+| `.sbnk.1.x64` | Wwise sound-bank logic, events, actions and playback structure |
+| `.spck.1` | Sound packs containing audio media |
+| `.msg.21` | Text and localisation used for BGM titles, artists, series names and other audio-related display text |
+
+REasy supports Street Fighter 6 sound-bank editing and audio replacement workflows.
+
+---
+
+## `product/sound/resource/`
+
+This folder contains many of the game's sound-bank resources.
+
+Sound banks use:
+
+```text
+.sbnk.1.x64
+```
+
+For example:
+
+```text
+bgm_battle_esf001.sbnk.1.x64
+```
+
+is Ryu's battle BGM sound bank.
+
+The `esf` ID follows the normal character numbering:
+
+```text
+esf001 = Ryu
+esf009 = Cammy
+esf022 = Akuma
+```
+
+Sound banks do not normally contain the actual audio itself.
+
+Instead, they contain the **logic and structure** describing how the audio is used.
+
+This can include:
+
+- Events
+- Actions
+- Music Switches
+- Music Segments
+- Music Tracks
+- Audio Sources
+- Source IDs
+- Playback behaviour
+- Looping
+- Transitions
+- Music states
+
+For music, a sound bank can describe how individual parts of a track are arranged and when they should play during a match.
+
+In simple terms:
+
+```text
+SBNK
+    ↓
+Controls how and when audio plays
+```
+
+---
+
+## Sound Bank Structure
+
+When opened in REasy, an `.sbnk` can contain objects such as:
+
+```text
+Event
+Action
+MusicSwitchContainer
+MusicSegment
+MusicTrack
+AudioSource
+```
+
+A battle BGM can contain multiple music segments and tracks which are selected or changed depending on the state of the match.
+
+For example, different sections can be used for:
+
+- Normal battle
+- Low health
+- Final round
+- Critical Art states
+- Round transitions
+- Other dynamic music changes
+
+The sound bank references audio using **Source IDs**.
+
+These Source IDs point to the actual audio media stored in the corresponding sound packs.
+
+---
+
+## `product/sound/wwise/`
+
+This folder contains additional Wwise audio resources and sound packs.
+
+Sound packs use:
+
+```text
+.spck.1
+```
+
+These contain the actual audio media referenced by the sound-bank logic.
+
+A simplified relationship is:
+
+```text
+SBNK
+    ↓
+Event / playback logic
+    ↓
+Source ID
+    ↓
+SPCK
+    ↓
+Audio media
+```
+
+---
+
+## `streaming/product/sound/wwise/`
+
+A large amount of Street Fighter 6 audio is stored beneath:
+
+```text
+streaming/product/sound/wwise/
+```
+
+These are streaming sound packs used for audio that the game loads or streams as required.
+
+The files commonly use:
+
+```text
+.spck.1
+```
+
+This is especially important for larger audio assets such as:
+
+- Battle music
+- Character music
+- Stage music
+- Voice
+- Announcer audio
+- Longer sound effects
+- Other streamed audio
+
+When replacing audio, always check whether the media is stored under the normal `product` path or the `streaming` path.
+
+For many audio mods, the `.sbnk` under the normal game data controls the playback while the corresponding `.spck` beneath the streaming path contains the actual sound.
+
+---
+
+## Sound Banks vs Sound Packs
+
+The easiest way to understand the difference is:
+
+```text
+.sbnk
+    = Logic
+
+.spck
+    = Audio
+```
+
+Or in more detail:
+
+```text
+SBNK
+    ↓
+When should the sound play?
+What event triggers it?
+Which music segment should be active?
+Which Source ID should be used?
+How should it loop or transition?
+
+SPCK
+    ↓
+Contains the actual audio referenced by that Source ID
+```
+
+Both can therefore be required for more advanced audio replacements.
+
+---
+
+## Character Battle BGM
+
+Character battle music commonly follows a filename structure such as:
+
+```text
+bgm_battle_esf001.sbnk.1.x64
+```
+
+where:
+
+```text
+bgm_battle = Battle music
+esf001     = Ryu
+```
+
+Other fighters follow the same `esf` character IDs used throughout the game.
+
+This makes the Character Codes table at the top of this reference useful when locating character-specific audio.
+
+---
+
+## Dynamic Music
+
+Street Fighter 6 uses dynamic music systems rather than simply playing one flat audio file from beginning to end.
+
+A battle BGM sound bank can contain multiple:
+
+```text
+Music Segments
+Music Tracks
+Music Switches
+Audio Sources
+```
+
+These can allow the game to change between sections of the music depending on the current battle state.
+
+Because of this, replacing battle music can involve more than replacing a single audio file.
+
+For simple replacements, keeping the original bank structure and replacing the referenced audio is usually the easiest approach.
+
+More advanced sound-bank editing can alter:
+
+- Track structure
+- Segment duration
+- Loop points
+- Transitions
+- Source assignments
+- Dynamic music behaviour
+
+A dedicated audio guide can cover these workflows in more detail.
+
+---
+
+## `product/message/sound/`
+
+Audio display names and metadata are stored separately from the audio itself.
+
+These are found under:
+
+```text
+product/message/sound/
+```
+
+Examples include:
+
+```text
+bgmartistmessage.msg.21
+bgmseriesmessage.msg.21
+bgmtitlemessage.msg.21
+```
+
+These MSG files contain text used for information such as:
+
+- BGM title
+- Artist
+- Album / series
+- Music-related menu text
+
+For example, replacing a BGM does not automatically change the title shown inside the game.
+
+The audio may be replaced under:
+
+```text
+product/sound/
+streaming/product/sound/
+```
+
+while the displayed title and artist information are changed separately under:
+
+```text
+product/message/sound/
+```
+
+REasy's MSG editor can be used to edit these text entries.
+
+---
+
+## Typical Audio Mod Workflow
+
+A basic audio replacement may involve:
+
+1. Locate the relevant `.sbnk.1.x64`.
+2. Open the sound bank in REasy.
+3. Identify the event, track or audio source being used.
+4. Find the corresponding **Source ID**.
+5. Locate the matching audio inside the relevant `.spck.1`.
+6. Replace or rebuild the audio.
+7. Test the replacement in game.
+8. If required, edit the corresponding MSG files under `product/message/sound/` to change the displayed title, artist or series information.
+
+For a straightforward replacement, keeping the original IDs and sound-bank structure is normally the safest approach.
+
+More complex mods can edit the sound-bank logic itself to change how the game selects, loops and transitions between audio.
+
+</details>
+
 [⬅️ Back to Games](../README.md) | [⬆️ Top](#street-fighter-6-file-structure-reference)
