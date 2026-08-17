@@ -1890,4 +1890,17 @@ The best approach is usually to identify **where the artwork appears in the game
 
 </details>
 
+---
+
+## New to REasy?
+
+If you're new to REasy, these guides cover the basic setup and search tools used throughout this reference.
+
+- [Getting Started: Setup REasy](../../REasy-GUI/Getting-Started.md)  
+  Download or build REasy, configure the game version and basic settings, and learn the main starting workflow.
+
+- [Using Search and Regex](../../REasy-GUI/Using-Search-and-Regex.md)  
+  Learn how to find files, character IDs, paths and file types using REasy's search fields and regular expressions.
+
+
 [⬅️ Back to Games](../README.md) | [⬆️ Top](#street-fighter-6-file-structure-reference)
