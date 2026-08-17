@@ -6,6 +6,32 @@ This section contains guides and documentation for the **REasy graphical user in
 
 ---
 
+## Current REasy Capabilities
+
+REasy is actively developed and supports a growing collection of RE Engine file formats and modding workflows.
+
+Current features include:
+
+- Browsing and extracting files directly from game PAK archives.
+- Creating and exporting PAK files.
+- Exporting projects for Fluffy Mod Manager.
+- Multiple projects open at the same time.
+- Project Library for reopening and managing projects.
+- Opening files directly from PAK archives without extracting them first.
+- 3D viewing of supported meshes and scenes.
+- Editing supported RSZ files.
+- RSZ file comparison.
+- Searching across files and PAK archives.
+- File-list generation and improvement tools.
+- Texture viewing and conversion.
+- Audio playback and supported audio replacement workflows.
+- Automatic backups.
+- AI-assisted project navigation and editing for supported formats.
+
+For the latest feature and format support information, see the main [REasy repository](https://github.com/seifhassine/REasy).
+
+---
+
 ## Getting Started
 
 New to REasy? Start here.
