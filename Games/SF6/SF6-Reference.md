@@ -151,7 +151,7 @@ These are some of the file types most commonly encountered when modding Street F
 | `.tex` | Textures, masks and UI images |
 | `.mdf2` | Material definitions, texture assignments, shader flags and parameters |
 | `.user.2` | Structured game data; used by many systems including costume colour data |
-| `.chain` | Character hair, clothing and accessory physics |
+| `.chain` | Character body, hair, clothing and accessory physics |
 | `.scn` | Scene data and resource references |
 | `.pfb` | Prefab data and resource holders |
 | `.uvs` | UI animation / UV layout data |
@@ -177,7 +177,7 @@ File versions are appended after the extension, for example:
 
 ---
 
-# Important Modding Areas
+# Common Modding Areas
 
 <details>
 <summary><strong>Character Models and Costumes</strong></summary>
@@ -189,21 +189,10 @@ Character and costume modding is one of the most common types of Street Fighter 
 The main folders used are:
 
 ```text
-product/model/
+product/model/esf/
 product/charparam/
+streaming/model/esf/
 ```
-
-This section will cover:
-
-- Character and costume folder structure
-- Body, head and hair model parts
-- Mesh files
-- Character textures
-- MDF materials
-- CMD / Costume Material Data
-- Chain / physics files
-- Character scene references
-- Costume part swaps and redirects
 
 More detail will be added here as the reference is expanded.
 
