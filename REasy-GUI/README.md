@@ -16,6 +16,9 @@ New to REasy? Start here.
 - [REasy Settings](./Settings.md)  
   Overview of REasy's settings, including language options, VGMStream and Wwise configuration.
 
+- [Using Search and Regex](./Using-Search-and-Regex.md)  
+  Learn how to search files and paths using simple text filters and regular expressions.
+
 ---
 
 ## Projects
