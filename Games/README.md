@@ -14,10 +14,10 @@ This section contains technical documentation and guides for specific games supp
   - [How the Music Works](./Resident-Evil-3/README.md#-reference)
 
 - **Street Fighter 6**
-  - [Street Fighter 6 File Structure Reference](./SF6/Reference.md)
-  - [Character Models and Costumes](./SF6/Reference.md#character-models-and-costumes)
-  - [Audio Modding](./SF6/Reference.md#audio-modding)
-  - [UI Modding](./SF6/Reference.md#ui-modding)
+  - [Street Fighter 6 File Structure Reference](./SF6/SF6-Reference.md)
+  - [Character Models and Costumes](./SF6/SF6-Reference.md#character-models-and-costumes)
+  - [Audio Modding](./SF6/SF6-Reference.md#audio-modding)
+  - [UI Modding](./SF6/SF6-Reference.md#ui-modding)
 
 ---
 
