@@ -226,6 +226,22 @@ The version suffix is important because different RE Engine games — and someti
 
 ---
 
+### Street Fighter 6 Texture Version Change
+
+Street Fighter 6 previously used:
+
+```text
+.tex.143230113
+```
+
+before the later engine changes associated with the Switch 2-era update.
+
+Current versions use:
+
+```text
+.tex.241101895
+```
+
 # Common Modding Areas
 
 <details>
