@@ -15,7 +15,7 @@ This section contains technical documentation and guides for specific games supp
 
 - **Street Fighter 6**
   - [Street Fighter 6 File Structure Reference](./SF6/SF6-Reference.md)
-    Reference for character and stage IDs, costume slots, common abbreviations and file types, with expanding sections covering character models and costumes, audio modding, UI assets and other SF6-specific file locations.
+  - Reference for character and stage IDs, costume slots, common abbreviations and file types, with expanding sections covering character models and costumes, audio modding, UI assets and other SF6-specific file locations.
 
 ---
 
