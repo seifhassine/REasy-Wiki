@@ -173,25 +173,89 @@ Examples include:
 - Camera data
 - Gameplay settings
 
-REasy uses game-specific RSZ information to identify the classes, fields and data types stored inside these files.
+REasy uses a game-specific RSZ `.json` template to interpret the numeric type IDs and field layouts stored inside these files.
 
-For working with RSZ files, see:
+This allows REasy to display readable information such as:
 
-- [RSZ Editor (PFB / SCN / User)](./RSZ/RSZ-Editor.md)
+- Class names
+- Field names
+- Data types
+- Arrays
+- Object references
+- Values
+
+instead of only showing raw numeric data.
 
 ---
 
-## What are RSZ Dumps?
+## RSZ Templates / JSON Dumps
 
-REasy uses game-specific RSZ dumps to understand the available RSZ classes, fields, types and structures for each supported game.
+REasy comes bundled with RSZ `.json` files for its supported games.
 
-These dumps are included with REasy and are normally updated alongside REasy releases or when supported games receive updates that change their RSZ structures.
+These act as templates describing the classes, fields and data types available in that version of the game.
 
-They are stored under:
+<details>
+A small section of an RSZ JSON can look like:
+
+```json
+"1003863": {
+    "crc": "bbee45b0",
+    "fields": [
+        {
+            "align": 4,
+            "array": false,
+            "name": "PoolNameHash",
+            "native": false,
+            "original_type": "System.UInt32",
+            "size": 4,
+            "type": "U32"
+        }
+    ],
+    "name": "app.AdaptiveRTTAllocator",
+    "parent": "System.Object"
+}
+
+```
+</details>
+
+
+In this example, the template identifies:
 
 ```text
-resources/data/dumps/
+Type ID
+Class Name
+Parent Class
+Field Name
+Field Type
+Field Size
+Array / non-array state
 ```
+
+REasy uses this information to build the editable RSZ structure shown in the editor.
+
+The RSZ templates are updated alongside REasy releases and when supported games receive updates that change their RSZ structures.
+
+---
+
+## REasy RSZ Tools
+
+REasy includes several tools for working with RSZ-based files.
+
+### RSZ Editor
+
+The main RSZ Editor is used for opening and editing:
+
+```text
+SCN
+PFB
+USER
+```
+
+files.
+
+For more information, see:
+
+- [RSZ Editor (PFB / SCN / User)](./RSZ/RSZ-Editor.md)
 
 The current dumps can also be viewed in the main REasy repository:
 
@@ -202,6 +266,55 @@ https://github.com/seifhassine/REasy/tree/master/resources/data/dumps
 For working with RSZ files, see:
 
 - [RSZ Editor (PFB / SCN / User)](./RSZ/RSZ-Editor.md)
+
+---
+
+### RSZ File Diff Viewer
+
+The RSZ File Diff Viewer can compare two RSZ files and highlight differences between their structures and values.
+
+> As of REasy 0.7.6, this tool is still considered highly experimental.
+
+### Outdated Files Detector
+
+The Outdated Files Detector can help identify RSZ files that are incompatible with the currently selected RSZ template.
+
+This is useful after a game update, where an older mod may still contain RSZ data based on a previous game structure.
+
+When checking older mods, use the latest RSZ `.json` for the current game version.
+
+### CSV Extractor (RSZ Data Matcher)
+
+Introduced in REasy 0.7.6, the **CSV Extractor (RSZ Data Matcher)** can scan RSZ files and extract selected matching data into a CSV file.
+
+It can work with:
+
+```text
+SCN
+PFB
+USER
+```
+
+files and can match fields between two sets of RSZ data using configurable rules.
+
+This can be useful for analysing large groups of files and exporting selected values into a spreadsheet-friendly format.
+
+---
+
+## What is CSV?
+
+CSV stands for **Comma-Separated Values**.
+
+It is a simple text format used to store table-like data in rows and columns.
+
+CSV files can be opened in applications such as:
+
+- Microsoft Excel
+- LibreOffice Calc
+- Google Sheets
+- Text editors
+
+REasy uses CSV export in tools such as the RSZ Data Matcher so extracted game data can be reviewed or compared more easily.
 
 ---
 
