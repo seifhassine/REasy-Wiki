@@ -305,24 +305,304 @@ REasy uses CSV export in tools such as the RSZ Data Matcher so extracted game da
 
 ## What is a Scene?
 
-A scene is a collection of GameObjects, components and references used to build or configure part of the game.
+A Scene is a structured collection of GameObjects, components and references used by RE Engine to build or configure part of the game.
 
-RE Engine scene files commonly use:
+RE Engine Scene files commonly use:
 
 ```text
 .scn
 ```
 
-A scene can contain things such as:
+A `.scn` file can contain many different types of data depending on its purpose.
 
-- Stage objects
-- Character setup
+Some scenes contain or reference visible 3D geometry, while others act mainly as containers for systems such as:
+
+- 3D scene/ Environment objects
 - Cameras
 - Lighting
-- Effects
-- Collision-related references
+- Visual effects
+- Sound
+- Collision-related data
+- NPCs
+- Spawn points
+- Gameplay logic
 - Prefabs
-- Gameplay systems
+- Other child scenes
+
+REasy includes a built-in **Scene Editor** for supported `.scn` file
+
+- Moving objects with Transform values
+- Rotating and scaling objects
+- Adding new GameObjects
+- Removing GameObjects
+- Enabling or disabling objects and components
+- Editing component values
+- Editing linked resource paths
+- Working with child scenes
+- Loading multiple scenes together
+
+---
+
+<details>
+<summary><strong>More Details on scenes</strong></summary>
+  
+### Scene Hierarchies
+
+A single area can be built from many separate `.scn` files rather than one large scene.
+
+A useful example is the World Tour area `wtc0202` in Street Fighter 6.
+
+The main environment scene is:
+
+```text
+product/environment/stage/scene/wtc/wtc0202/wtc0202_env.scn.20
+```
+
+This acts as a master environment scene and references the child scenes used to build the area.
+
+Under:
+
+```text
+product/environment/stage/scene/wtc/wtc0202/area/
+```
+
+the area is divided into three main scenes:
+
+```text
+wtc0202_00.scn.20
+wtc0202_01.scn.20
+wtc0202_02.scn.20
+```
+
+In this example:
+
+- `wtc0202_00` is an exterior area.
+- `wtc0202_01` is another exterior area connected seamlessly to `00`.
+- `wtc0202_02` is the interior cave area.
+
+Each of these can then reference additional child scenes.
+
+For example, `wtc0202_00` uses scene groups such as:
+
+```text
+wtc0202_00_props_dynamic.scn.20
+wtc0202_00_props_manual_high.scn.20
+wtc0202_00_props_manual_low.scn.20
+wtc0202_00_props_static_large.scn.20
+wtc0202_00_props_static_small.scn.20
+```
+
+These divide the environment into different types of objects.
+
+For example:
+
+```text
+props_static_large
+```
+
+can contain larger static objects such as rocks or major environment props, while:
+
+```text
+props_static_small
+```
+
+contains smaller detail objects.
+
+This allows large environments to be split into manageable groups rather than storing everything inside one Scene file.
+
+---
+
+### Scenes Can Contain 3D Geometry
+
+A Scene can reference Mesh and MDF resources directly through its GameObjects and components.
+
+For example, a `via.render.Mesh` component can reference:
+
+```text
+Product/Environment/Stage/Resource/ess/ess0000_00/ess0000_00.mesh
+Product/Environment/Stage/Resource/ess/ess0000_00/ess0000_00.mdf2
+```
+
+REasy can load supported scene resources into its Scene Editor, allowing the scene to be viewed and edited in 3D.
+
+Depending on the scene and game, this can allow modders to work with:
+
+- 3D geometry placement
+- Object transforms
+- Props
+- Scene hierarchy
+- Child scenes
+- Lighting
+- VFX emitters
+- NPC and dynamic-object placement
+- Child scene layout
+- GameObject and component settings
+- Other scene-linked resources
+
+---
+
+### Camera Scenes
+
+Scenes are not limited to environment geometry.
+
+For the same `wtc0202` example, camera data is stored under:
+
+```text
+product/camera/scene/wtc/
+```
+
+with a scene such as:
+
+```text
+wtc0202_camera.scn.20
+```
+
+Camera scenes can contain detailed rendering and camera configuration.
+
+Depending on the game, this can include:
+
+- Field of View
+- Render output
+- Camera behaviour
+- Tone mapping
+- HDR values
+- Sharpness
+- Contrast
+- Film grain
+- Screen Space Reflections
+- Fog
+- Bloom
+- Motion blur
+- Other post-processing and rendering controls
+
+These values are stored as components attached to GameObjects inside the Scene.
+
+---
+
+### Level and Control Scenes
+
+Other Scene files can control gameplay rather than visible geometry.
+
+For example:
+
+```text
+product/level/scene/wtc/wtc0202/control/
+```
+
+contains Scene files used for level and control data.
+
+These can determine which NPCs, objects or other game elements are active depending on factors such as:
+
+- Player location
+- Mission state
+- Current area
+- Graphics settings
+- Other gameplay conditions
+
+For example, higher graphics settings can allow scenes to use more NPCs or more detailed objects than lower settings.
+
+---
+
+### Spawn and Position Data
+
+Scene files can also define important gameplay positions.
+
+For example:
+
+```text
+product/level/scene/wtc/wtc0202/level/point_base.scn.20
+```
+
+can contain components defining locations used by the game, such as where the player loads or spawns.
+
+---
+
+### Lighting Scenes
+
+Lighting data for an area can be stored in separate Scene files.
+
+For example:
+
+```text
+product/light/scene/wtc/wtc0202/
+```
+
+These scenes can contain the lights used by the environment.
+
+When loaded together with the environment scenes, they help build the complete visual appearance of the area.
+
+---
+
+### Sound Scenes
+
+Sound-related Scene files can also exist separately.
+
+For example:
+
+```text
+product/sound/sound_scene/wtc/wtc0202/
+```
+
+These contain scene-based sound setup and references used by the area.
+
+---
+
+### VFX Scenes
+
+Visual effects can also be stored in separate Scene files.
+
+For example:
+
+```text
+product/vfx/environment/wtm/wtc/wtc0202/
+```
+
+These can contain VFX-related GameObjects and components for effects such as:
+
+- Waterfalls
+- Environmental particles
+- Atmospheric effects
+- Dynamic effects
+- Other scene-based VFX
+
+The Scene can contain the position and configuration of the effect while the actual VFX resources are referenced separately.
+
+---
+
+### Building a Complete Scene in REasy
+
+A complete environment may therefore be spread across many Scene files:
+
+```text
+Environment
+Camera
+Level
+Control
+Lighting
+Sound
+VFX
+Props
+```
+
+REasy can add multiple supported Scene files into the Scene Viewer.
+
+This allows related scenes to be viewed together and can make it possible to inspect or edit things such as:
+
+- 3D geometry placement
+- Props
+- Lighting positions
+- VFX emitter positions
+- NPC and dynamic-object placement
+- Child scene layout
+- Other scene-linked resources
+
+For example, a World Tour environment can be assembled from its environment, prop, lighting, sound and VFX scenes to give a much more complete representation of the area.
+
+---
+
+> The `wtc0202` example above demonstrates one way Street Fighter 6 structures a World Tour environment. Other RE Engine games, and even other systems within the same game, can use `.scn` files in very different ways.
+
+</details>
 
 REasy can expose these structures through the RSZ Editor.
 
