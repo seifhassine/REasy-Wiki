@@ -13,6 +13,7 @@ It is intended as a quick-reference guide for users who are unfamiliar with RE E
 A PAK file is a packed, protected archive used by RE Engine games to store most of the game's assets.
 
 These are normally some of the largest files inside the game folder.
+
 Depending on the title, a game can use multiple PAK files for the base game, updates, DLC or other content.
 
 The contents of a PAK are organised using game file paths. Because the archive entries are identified internally by hashes, a `.list` file is used to resolve those hashes back into readable paths so modders can browse and extract the assets.
@@ -32,7 +33,6 @@ REasy can browse and extract supported PAK archives without requiring the entire
 For more information, see:
 
 - [PAK Browser](./PAK-Browser.md)
-
 
 ---
 
@@ -118,12 +118,6 @@ natives/stm/product/model/esf/esf029/005/pubbuttleset_esf029_005_01_drv_bs1.jcns
 
 </details>
 
-
-
-For more information, see:
-
-- [File List Generator](./File-List-Generator.md)
-
 ### Unknown PAK Entries
 
 If REasy detects an entry inside a PAK but the corresponding path is not known by the loaded `.list`, it can be displayed beneath:
@@ -195,6 +189,10 @@ REasy comes bundled with RSZ `.json` files for its supported games.
 These act as templates describing the classes, fields and data types available in that version of the game.
 
 <details>
+<summary><strong>Example RSZ JSON entry</strong></summary>
+
+<br>
+
 A small section of an RSZ JSON can look like:
 
 ```json
@@ -214,10 +212,9 @@ A small section of an RSZ JSON can look like:
     "name": "app.AdaptiveRTTAllocator",
     "parent": "System.Object"
 }
-
 ```
-</details>
 
+</details>
 
 In this example, the template identifies:
 
@@ -234,140 +231,6 @@ Array / non-array state
 REasy uses this information to build the editable RSZ structure shown in the editor.
 
 The RSZ templates are updated alongside REasy releases and when supported games receive updates that change their RSZ structures.
-
----
-
-## What is Regex?
-
-Regex, short for **regular expression**, is a pattern-based search system.
-
-REasy uses regex-capable search fields in several tools.
-
-For example:
-
-```text
-\.tex(\.|$)
-```
-
-can be used to search for texture files.
-
-Regex is not required for normal searching, but it becomes useful when searching for:
-
-- Multiple file types
-- Specific filename patterns
-- Character IDs
-- Versioned extensions
-- Groups of related paths
-
-For practical examples, see:
-
-- [Using Search and Regex](./Using-Search-and-Regex.md)
-
-## What is a File Version Suffix?
-
-RE Engine files commonly include a numeric version after the extension.
-
-For example:
-
-```text
-example.tex.241101895
-example.mesh.230110883
-example.mdf2.31
-example.scn.20
-example.pfb.17
-example.user.2
-```
-
-These numbers identify the version of that RE Engine file format used by the game.
-
-The same basic file type can use different version numbers between games or engine revisions.
-
-Because of this, a file from one RE Engine game is not automatically compatible with another game just because the extension is the same.
-
-For examples of common versions, see:
-
-- [Using Search and Regex](./Using-Search-and-Regex.md)
-
----
-
-## What is a Fluffy Mod Manager ZIP?
-
-REasy projects can be exported as a ZIP structured for use with Fluffy Mod Manager.
-
-This allows a project to be packaged with the correct folder structure so it can be installed and toggled through Fluffy.
-
-REasy can also export supported projects as PAK files.
-
----
-
-## What Does RT / non-RT Mean?
-
-Some Resident Evil titles have both older non-Ray-Tracing builds and newer Ray-Tracing updated builds.
-
-In REasy documentation these may be identified as:
-
-```text
-RE2
-RE2RT
-
-RE3
-RE3RT
-
-RE7
-RE7RT
-```
-
-The RT and non-RT versions can use different RE Engine file versions and internal structures.
-
-Mods made for one version may therefore require conversion before they work with the other.
-
----
-
-
-
-## What is a Memory Dump?
-
-A memory dump is a snapshot of a running program's memory.
-
-For REasy file-list work, a memory dump can be useful because the running game may contain readable resource paths that are not easy to find elsewhere.
-
-On Windows, a dump can be created using Task Manager:
-
-1. Open Task Manager.
-2. Find the running game process.
-3. Right-click the process.
-4. Choose **Create memory dump file**.
-5. Note the location where Windows saves the dump.
-
-REasy's File List Generator can analyse the dump and extract candidate resource paths.
-
-See:
-
-- [File List Generator](./File-List-Generator.md)
-
----
-
-## What is a GUID?
-
-A GUID is a globally unique identifier used by many RE Engine objects and references.
-
-It commonly appears in:
-
-- GameObjects
-- Components
-- Scene data
-- Prefabs
-- Resource references
-
-A GUID usually looks similar to:
-
-```text
-976544d6-c971-4e08-afff-6fd4492dba13
-```
-
-REasy can display and, where appropriate, generate or edit GUID values.
-
----
 
 ---
 
@@ -390,18 +253,6 @@ files.
 For more information, see:
 
 - [RSZ Editor (PFB / SCN / User)](./RSZ/RSZ-Editor.md)
-
-The current dumps can also be viewed in the main REasy repository:
-
-```text
-https://github.com/seifhassine/REasy/tree/master/resources/data/dumps
-```
-
-For working with RSZ files, see:
-
-- [RSZ Editor (PFB / SCN / User)](./RSZ/RSZ-Editor.md)
-
----
 
 ### RSZ File Diff Viewer
 
@@ -545,6 +396,138 @@ The exact components available depend on the game and the type of object being e
 
 ---
 
+## What is Regex?
+
+Regex, short for **regular expression**, is a pattern-based search system.
+
+REasy uses regex-capable search fields in several tools.
+
+For example:
+
+```text
+\.tex(\.|$)
+```
+
+can be used to search for texture files.
+
+Regex is not required for normal searching, but it becomes useful when searching for:
+
+- Multiple file types
+- Specific filename patterns
+- Character IDs
+- Versioned extensions
+- Groups of related paths
+
+For practical examples, see:
+
+- [Using Search and Regex](./Using-Search-and-Regex.md)
+
+---
+
+## What is a File Version Suffix?
+
+RE Engine files commonly include a numeric version after the extension.
+
+For example:
+
+```text
+example.tex.241101895
+example.mesh.230110883
+example.mdf2.31
+example.scn.20
+example.pfb.17
+example.user.2
+```
+
+These numbers identify the version of that RE Engine file format used by the game.
+
+The same basic file type can use different version numbers between games or engine revisions.
+
+Because of this, a file from one RE Engine game is not automatically compatible with another game just because the extension is the same.
+
+For examples of common versions, see:
+
+- [Using Search and Regex](./Using-Search-and-Regex.md)
+
+---
+
+## What is a Fluffy Mod Manager ZIP?
+
+REasy projects can be exported as a ZIP structured for use with Fluffy Mod Manager.
+
+This allows a project to be packaged with the correct folder structure so it can be installed and toggled through Fluffy.
+
+REasy can also export supported projects as PAK files.
+
+---
+
+## What Does RT / non-RT Mean?
+
+Some Resident Evil titles have both older non-Ray-Tracing builds and newer Ray-Tracing updated builds.
+
+In REasy documentation these may be identified as:
+
+```text
+RE2
+RE2RT
+
+RE3
+RE3RT
+
+RE7
+RE7RT
+```
+
+The RT and non-RT versions can use different RE Engine file versions and internal structures.
+
+Mods made for one version may therefore require conversion before they work with the other.
+
+---
+
+## What is a Memory Dump?
+
+A memory dump is a snapshot of a running program's memory.
+
+For REasy file-list work, a memory dump can be useful because the running game may contain readable resource paths that are not easy to find elsewhere.
+
+On Windows, a dump can be created using Task Manager:
+
+1. Open Task Manager.
+2. Find the running game process.
+3. Right-click the process.
+4. Choose **Create memory dump file**.
+5. Note the location where Windows saves the dump.
+
+REasy's File List Generator can analyse the dump and extract candidate resource paths.
+
+See:
+
+- [File List Generator](./File-List-Generator.md)
+
+---
+
+## What is a GUID?
+
+A GUID is a globally unique identifier used by many RE Engine objects and references.
+
+It commonly appears in:
+
+- GameObjects
+- Components
+- Scene data
+- Prefabs
+- Resource references
+
+A GUID usually looks similar to:
+
+```text
+976544d6-c971-4e08-afff-6fd4492dba13
+```
+
+REasy can display and, where appropriate, generate or edit GUID values.
+
+---
+
 ## What is a Hash?
 
 RE Engine uses hashes in several systems instead of storing or looking up everything by readable text.
@@ -581,4 +564,5 @@ for supported hash types.
 
 ---
 
+[⬅️ Back to REasy GUI Documentation](./README.md) | [⬆️ Top](#common-re-engine-modding-terms)
 [⬅️ Back to REasy GUI Documentation](./README.md) | [⬆️ Top](#common-re-engine-modding-terms)
