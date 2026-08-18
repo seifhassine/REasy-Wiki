@@ -237,6 +237,119 @@ The RSZ templates are updated alongside REasy releases and when supported games 
 
 ---
 
+## What is Regex?
+
+Regex, short for **regular expression**, is a pattern-based search system.
+
+REasy uses regex-capable search fields in several tools.
+
+For example:
+
+```text
+\.tex(\.|$)
+```
+
+can be used to search for texture files.
+
+Regex is not required for normal searching, but it becomes useful when searching for:
+
+- Multiple file types
+- Specific filename patterns
+- Character IDs
+- Versioned extensions
+- Groups of related paths
+
+For practical examples, see:
+
+- [Using Search and Regex](./Using-Search-and-Regex.md)
+
+## What is a File Version Suffix?
+
+RE Engine files commonly include a numeric version after the extension.
+
+For example:
+
+```text
+example.tex.241101895
+example.mesh.230110883
+example.mdf2.31
+example.scn.20
+example.pfb.17
+example.user.2
+```
+
+These numbers identify the version of that RE Engine file format used by the game.
+
+The same basic file type can use different version numbers between games or engine revisions.
+
+Because of this, a file from one RE Engine game is not automatically compatible with another game just because the extension is the same.
+
+For examples of common versions, see:
+
+- [Using Search and Regex](./Using-Search-and-Regex.md)
+
+---
+
+## What is a Fluffy Mod Manager ZIP?
+
+REasy projects can be exported as a ZIP structured for use with Fluffy Mod Manager.
+
+This allows a project to be packaged with the correct folder structure so it can be installed and toggled through Fluffy.
+
+REasy can also export supported projects as PAK files.
+
+---
+
+## What Does RT / non-RT Mean?
+
+Some Resident Evil titles have both older non-Ray-Tracing builds and newer Ray-Tracing updated builds.
+
+In REasy documentation these may be identified as:
+
+```text
+RE2
+RE2RT
+
+RE3
+RE3RT
+
+RE7
+RE7RT
+```
+
+The RT and non-RT versions can use different RE Engine file versions and internal structures.
+
+Mods made for one version may therefore require conversion before they work with the other.
+
+---
+
+
+
+## What is a Memory Dump?
+
+A memory dump is a snapshot of a running program's memory.
+
+For REasy file-list work, a memory dump can be useful because the running game may contain readable resource paths that are not easy to find elsewhere.
+
+On Windows, a dump can be created using Task Manager:
+
+1. Open Task Manager.
+2. Find the running game process.
+3. Right-click the process.
+4. Choose **Create memory dump file**.
+5. Note the location where Windows saves the dump.
+
+REasy's File List Generator can analyse the dump and extract candidate resource paths.
+
+See:
+
+- [File List Generator](./File-List-Generator.md)
+
+---
+
+
+---
+
 ## REasy RSZ Tools
 
 REasy includes several tools for working with RSZ-based files.
@@ -483,56 +596,6 @@ Some games and platforms can use different path layouts or suffixes.
 
 ---
 
-## What is a File Version Suffix?
-
-RE Engine files commonly include a numeric version after the extension.
-
-For example:
-
-```text
-example.tex.241101895
-example.mesh.230110883
-example.mdf2.31
-example.scn.20
-example.pfb.17
-example.user.2
-```
-
-These numbers identify the version of that RE Engine file format used by the game.
-
-The same basic file type can use different version numbers between games or engine revisions.
-
-Because of this, a file from one RE Engine game is not automatically compatible with another game just because the extension is the same.
-
-For examples of common versions, see:
-
-- [Using Search and Regex](./Using-Search-and-Regex.md)
-
----
-
-## What Does RT / non-RT Mean?
-
-Some Resident Evil titles have both older non-Ray-Tracing builds and newer Ray-Tracing updated builds.
-
-In REasy documentation these may be identified as:
-
-```text
-RE2
-RE2RT
-
-RE3
-RE3RT
-
-RE7
-RE7RT
-```
-
-The RT and non-RT versions can use different RE Engine file versions and internal structures.
-
-Mods made for one version may therefore require conversion before they work with the other.
-
----
-
 ## What is a Hash?
 
 RE Engine uses hashes in several systems instead of storing or looking up everything by readable text.
@@ -660,65 +723,8 @@ When replacing such an asset, both versions may need to be included in the mod.
 
 ---
 
-## What is a Fluffy Mod Manager ZIP?
 
-REasy projects can be exported as a ZIP structured for use with Fluffy Mod Manager.
 
-This allows a project to be packaged with the correct folder structure so it can be installed and toggled through Fluffy.
-
-REasy can also export supported projects as PAK files.
-
----
-
-## What is a Memory Dump?
-
-A memory dump is a snapshot of a running program's memory.
-
-For REasy file-list work, a memory dump can be useful because the running game may contain readable resource paths that are not easy to find elsewhere.
-
-On Windows, a dump can be created using Task Manager:
-
-1. Open Task Manager.
-2. Find the running game process.
-3. Right-click the process.
-4. Choose **Create memory dump file**.
-5. Note the location where Windows saves the dump.
-
-REasy's File List Generator can analyse the dump and extract candidate resource paths.
-
-See:
-
-- [File List Generator](./File-List-Generator.md)
-
----
-
-## What is Regex?
-
-Regex, short for **regular expression**, is a pattern-based search system.
-
-REasy uses regex-capable search fields in several tools.
-
-For example:
-
-```text
-\.tex(\.|$)
-```
-
-can be used to search for texture files.
-
-Regex is not required for normal searching, but it becomes useful when searching for:
-
-- Multiple file types
-- Specific filename patterns
-- Character IDs
-- Versioned extensions
-- Groups of related paths
-
-For practical examples, see:
-
-- [Using Search and Regex](./Using-Search-and-Regex.md)
-
----
 
 ## Related Guides
 
