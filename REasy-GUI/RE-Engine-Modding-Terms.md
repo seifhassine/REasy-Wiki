@@ -347,6 +347,27 @@ See:
 
 ---
 
+## What is a GUID?
+
+A GUID is a globally unique identifier used by many RE Engine objects and references.
+
+It commonly appears in:
+
+- GameObjects
+- Components
+- Scene data
+- Prefabs
+- Resource references
+
+A GUID usually looks similar to:
+
+```text
+976544d6-c971-4e08-afff-6fd4492dba13
+```
+
+REasy can display and, where appropriate, generate or edit GUID values.
+
+---
 
 ---
 
@@ -524,78 +545,6 @@ The exact components available depend on the game and the type of object being e
 
 ---
 
-## What is a Resource Reference?
-
-Many RE Engine files do not contain all of their data directly.
-
-Instead, they reference external resources such as:
-
-- Meshes
-- Materials
-- Textures
-- Motion banks
-- Audio
-- Prefabs
-- User files
-
-For example, a character scene may reference:
-
-```text
-Product/Model/esf/esf001/001/01/esf001_001_01.mesh
-```
-
-rather than containing the mesh itself.
-
-REasy can often display these references and open the linked resource directly.
-
----
-
-## What is Streaming Data?
-
-Some RE Engine games separate larger or higher-resolution assets into a streaming path.
-
-A common structure is:
-
-```text
-natives/stm/product/
-```
-
-for normal game data, and:
-
-```text
-natives/stm/streaming/product/
-```
-
-for streaming assets.
-
-Streaming data can include:
-
-- Full-resolution textures
-- Large audio files
-- Other assets loaded or streamed when required
-
-For some modding workflows, both the normal and streaming versions of an asset need to be replaced.
-
----
-
-## What Does `natives/stm/` Mean?
-
-`natives/stm/` is the common root path used by many PC RE Engine game resources.
-
-For example:
-
-```text
-natives/stm/product/gui/
-natives/stm/product/model/
-natives/stm/product/sound/
-```
-
-The exact folder structure varies between games.
-
-Some games and platforms can use different path layouts or suffixes.
-
----
-
 ## What is a Hash?
 
 RE Engine uses hashes in several systems instead of storing or looking up everything by readable text.
@@ -621,110 +570,6 @@ Tools → Hash Calculator
 for supported hash types.
 
 ---
-
-## What is a ShortID?
-
-ShortIDs are numeric identifiers commonly used by Wwise audio systems.
-
-They can identify:
-
-- Events
-- Actions
-- Audio objects
-- Music objects
-- Other Wwise resources
-
-In audio modding, REasy can display and work with these IDs when editing supported sound banks.
-
-A readable event name may be converted into a ShortID and stored numerically inside the bank.
-
----
-
-## What is a Source ID?
-
-A Source ID identifies an individual audio source inside a Wwise sound system.
-
-It is commonly used to link:
-
-```text
-Sound Bank Logic
-    ↓
-Source ID
-    ↓
-Audio Media
-```
-
-REasy can display Source IDs when working with supported BNK/PCK or SBNK/SPCK audio workflows.
-
----
-
-## What is a GUID?
-
-A GUID is a globally unique identifier used by many RE Engine objects and references.
-
-It commonly appears in:
-
-- GameObjects
-- Components
-- Scene data
-- Prefabs
-- Resource references
-
-A GUID usually looks similar to:
-
-```text
-976544d6-c971-4e08-afff-6fd4492dba13
-```
-
-REasy can display and, where appropriate, generate or edit GUID values.
-
----
-
-## What is a Mod Manager Path?
-
-Most RE Engine mods recreate the same folder structure used by the game.
-
-For example:
-
-```text
-natives/
-└── stm/
-    └── product/
-        └── gui/
-```
-
-A mod manager such as Fluffy Mod Manager then places or redirects these replacement files when the mod is enabled.
-
-Keeping the correct folder structure is essential because the game expects the replacement file to match the original resource path.
-
----
-
-## What is a Streaming Variant?
-
-A streaming variant is a second copy or counterpart of an asset stored in the streaming data.
-
-For example, a texture may have:
-
-```text
-product/model/...
-```
-
-and:
-
-```text
-streaming/product/model/...
-```
-
-versions.
-
-The streaming version is often the larger or full-resolution asset.
-
-When replacing such an asset, both versions may need to be included in the mod.
-
----
-
-
-
 
 ## Related Guides
 
