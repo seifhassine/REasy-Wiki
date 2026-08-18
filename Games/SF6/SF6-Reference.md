@@ -242,7 +242,7 @@ Current versions use:
 .tex.241101895
 ```
 
-# Common Modding Areas
+# Common Modding Areas (Click to expand)
 
 <a name="character-models-and-costumes"></a>
 <details>
