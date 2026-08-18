@@ -4,24 +4,27 @@
 
 This page explains common RE Engine modding terms and concepts used throughout REasy and the wider RE Engine modding community.
 
-It is intended as a quick-reference page for users who are new to REasy or unfamiliar with RE Engine terminology.
+It is intended as a quick-reference guide for users who are unfamiliar with RE Engine terminology or general modding terms.
 
 ---
 
 ## What is a PAK File?
 
-A PAK file is an archive used by RE Engine games to store large numbers of game files.
+A PAK file is a packed, protected archive used by RE Engine games to store most of the game's assets.
 
-Depending on the game, a PAK can contain:
+These are normally some of the largest files inside the game folder.
+Depending on the title, a game can use multiple PAK files for the base game, updates, DLC or other content.
+
+The contents of a PAK are organised using game file paths. Because the archive entries are identified internally by hashes, a `.list` file is used to resolve those hashes back into readable paths so modders can browse and extract the assets.
+
+Assets commonly found inside PAK files include:
 
 - Textures
 - Models
 - Audio
-- RSZ files
-- UI data
 - Animations
-- Stage assets
-- Configuration files
+- Game data
+- UI assets
 - Other game resources
 
 REasy can browse and extract supported PAK archives without requiring the entire archive to be unpacked first.
@@ -29,6 +32,7 @@ REasy can browse and extract supported PAK archives without requiring the entire
 For more information, see:
 
 - [PAK Browser](./PAK-Browser.md)
+
 
 ---
 
@@ -41,12 +45,84 @@ A `.list` file contains known game file paths which can be converted to the corr
 This allows REasy to display readable paths such as:
 
 ```text
-natives/stm/product/gui/...
+natives/stm/product/model/...
 ```
 
 instead of leaving the entry unresolved.
 
 REasy comes bundled with `.list` files for its supported games.
+
+These can be found under:
+
+```text
+REasy\resources\data\lists
+```
+
+<p align="left">
+  <img src="../media/REeasy_Tool_PAK_Browser_Select_list.jpg"><br>
+  <em>Captured in REasy 0.7.6</em>
+</p>
+
+A `.list` file can also be opened with any text editor.
+
+Each known file path is stored on its own line.
+
+<details>
+<summary><strong>Example `.list` entries</strong></summary>
+
+<br>
+
+```text
+natives/stm/product/model/esf/esf029/004/esf029_004_shape.user.2
+natives/stm/product/model/esf/esf029/004/pubbuttleset_esf029_004_01_drv_bs1.jcns.22
+natives/stm/product/model/esf/esf029/004/pubbuttleset_esf029_004_01_drv_rpy.jcns.22
+natives/stm/product/model/esf/esf029/004/pubbuttleset_esf029_004_01_drv_skin.jcns.22
+natives/stm/product/model/esf/esf029/005/00/esf029_005_00.mesh.230110883
+natives/stm/product/model/esf/esf029/005/00/esf029_005_00_v00.mdf2.31
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01.mesh.230110883
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clotha_1_cmask.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clotha_albd.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clotha_atos.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clotha_blend_msk4.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clotha_blenda_nrrc.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clotha_blendc_nrrc.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clotha_blendd_nrrc.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clotha_cwmask.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clotha_dmask.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clotha_nrrc.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clothb_1_cmask.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clothb_albd.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clothb_atos.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clothb_blend_msk4.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clothb_blenda_nrrc.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_clothb_nrrc.tex.241101895
+natives/stm/product/model/esf/esf029/005/01/esf029_005_01_v00.mdf2.31
+natives/stm/product/model/esf/esf029/005/esf029_005_01_aogeo.user.2
+natives/stm/product/model/esf/esf029/005/esf029_005_01_chain.chain.52
+natives/stm/product/model/esf/esf029/005/esf029_005_01_chain.user.2
+natives/stm/product/model/esf/esf029/005/esf029_005_01_drv_aim.jcns.22
+natives/stm/product/model/esf/esf029/005/esf029_005_01_drv_point.jcns.22
+natives/stm/product/model/esf/esf029/005/esf029_005_01_drv_rpy.jcns.22
+natives/stm/product/model/esf/esf029/005/esf029_005_01_jcs.user.2
+natives/stm/product/model/esf/esf029/005/esf029_005_bsd.user.2
+natives/stm/product/model/esf/esf029/005/esf029_005_ccvd.user.2
+natives/stm/product/model/esf/esf029/005/esf029_005_cmd_000.user.2
+natives/stm/product/model/esf/esf029/005/esf029_005_cmd_001.user.2
+natives/stm/product/model/esf/esf029/005/esf029_005_cmd_002.user.2
+natives/stm/product/model/esf/esf029/005/esf029_005_drv_bs1.jcns.22
+natives/stm/product/model/esf/esf029/005/esf029_005_msl.user.2
+natives/stm/product/model/esf/esf029/005/esf029_005_nsd.user.2
+natives/stm/product/model/esf/esf029/005/esf029_005_shape.user.2
+natives/stm/product/model/esf/esf029/005/pubbuttleset_esf029_005_01_drv_bs1.jcns.22
+```
+
+</details>
+
+
+
+For more information, see:
+
+- [File List Generator](./File-List-Generator.md)
 
 ### Unknown PAK Entries
 
