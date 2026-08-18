@@ -303,6 +303,28 @@ REasy uses CSV export in tools such as the RSZ Data Matcher so extracted game da
 
 ---
 
+## What is a GUID?
+
+A GUID is a globally unique identifier used by many RE Engine objects and references.
+
+It commonly appears in:
+
+- GameObjects
+- Components
+- Scene data
+- Prefabs
+- Resource references
+
+A GUID usually looks similar to:
+
+```text
+976544d6-c971-4e08-afff-6fd4492dba13
+```
+
+REasy can display and, where appropriate, generate or edit GUID values.
+
+---
+
 ## What is a Scene?
 
 A Scene is a structured collection of GameObjects, components and references used by RE Engine to build or configure part of the game.
@@ -731,36 +753,22 @@ For examples of common versions, see:
 
 ---
 
-## What is a Fluffy Mod Manager ZIP?
-
-REasy projects can be exported as a ZIP structured for use with Fluffy Mod Manager.
-
-This allows a project to be packaged with the correct folder structure so it can be installed and toggled through Fluffy.
-
-REasy can also export supported projects as PAK files.
-
----
-
 ## What Does RT / non-RT Mean?
 
-Some Resident Evil titles have both older non-Ray-Tracing builds and newer Ray-Tracing updated builds.
+Resident Evil 2, Resident Evil 3 and Resident Evil 7 originally released on PC without Ray Tracing.
 
-In REasy documentation these may be identified as:
+In June 2022, Capcom released updated versions of all three games with Ray Tracing, enhanced 3D audio and other engine changes. These updates also changed some RE Engine file formats and version numbers.
+
+Because many existing mods were created for the original versions, the modding community generally refers to the two builds as:
 
 ```text
-RE2
-RE2RT
-
-RE3
-RE3RT
-
-RE7
-RE7RT
+RE2      = non-RT
+RE2RT    = Ray Tracing version
+RE3      = non-RT
+RE3RT    = Ray Tracing version
+RE7      = non-RT
+RE7RT    = Ray Tracing version
 ```
-
-The RT and non-RT versions can use different RE Engine file versions and internal structures.
-
-Mods made for one version may therefore require conversion before they work with the other.
 
 ---
 
@@ -783,28 +791,6 @@ REasy's File List Generator can analyse the dump and extract candidate resource 
 See:
 
 - [File List Generator](./File-List-Generator.md)
-
----
-
-## What is a GUID?
-
-A GUID is a globally unique identifier used by many RE Engine objects and references.
-
-It commonly appears in:
-
-- GameObjects
-- Components
-- Scene data
-- Prefabs
-- Resource references
-
-A GUID usually looks similar to:
-
-```text
-976544d6-c971-4e08-afff-6fd4492dba13
-```
-
-REasy can display and, where appropriate, generate or edit GUID values.
 
 ---
 
