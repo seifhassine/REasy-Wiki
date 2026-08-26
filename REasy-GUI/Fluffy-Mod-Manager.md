@@ -264,21 +264,109 @@ This is useful for collections of related alternatives where there is no single 
 
 `MenuPriority=` controls where a mod appears inside an addon submenu.
 
-For example:
+If `MenuPriority=` is not used, Fluffy Mod Manager will normally sort the entries **alphanumerically**:
 
-```ini
-MenuPriority=10
+```text
+0-9
+A-Z
 ```
+
+For example, a set of addon options named:
+
+```text
+Jill Main Files (Install First)
+Improved Jiggle
+Clean No Dirt
+50% Dirt
+Dirty
+Sweaty
+No Sweat
+Bloody
+No Blood
+```
+
+would normally be displayed as:
+
+```text
+50% Dirt
+Bloody
+Clean No Dirt
+Dirty
+Improved Jiggle
+Jill Main Files (Install First)
+No Blood
+No Sweat
+Sweaty
+```
+
+This is not always the order you want, especially when a mod has a main file that should be installed first, followed by grouped optional choices.
+
+`MenuPriority=` allows you to manually control that order.
 
 Higher values are displayed above lower values.
 
-If it is not specified, the priority defaults to:
+For example:
+
+```ini
+Jill Main Files (Install First)
+MenuPriority=10
+```
+
+```ini
+Clean No Dirt
+MenuPriority=9
+```
+
+```ini
+50% Dirt
+MenuPriority=8
+```
+
+```ini
+Dirty
+MenuPriority=7
+```
+
+```ini
+No Blood
+MenuPriority=6
+```
+
+```ini
+Bloody
+MenuPriority=5
+```
+
+```ini
+No Sweat
+MenuPriority=4
+```
+
+```ini
+Sweaty
+MenuPriority=3
+```
+
+This would give you a much more deliberate menu order:
+
+```text
+Jill Main Files (Install First)
+Clean No Dirt
+50% Dirt
+Dirty
+No Blood
+Bloody
+No Sweat
+Sweaty
+```
+
+If `MenuPriority=` is not specified, the priority defaults to:
 
 ```text
 0
 ```
 
-This is useful when you want a preferred option, default version or commonly used addon to appear near the top of a submenu.
+This is especially useful for keeping main files, recommended options and related variants in a logical order instead of relying on alphanumeric sorting.
 
 ---
 
@@ -289,7 +377,7 @@ A dummy mod is used only to organise a mod menu.
 For example:
 
 ```ini
-name=Comic Portraits
+name=Marvel Character Names
 DummyMod=True
 ```
 
@@ -298,7 +386,7 @@ The dummy mod itself does not need to contain files that are installed into the 
 Other mods can then use:
 
 ```ini
-AddonFor=Comic Portraits
+AddonFor=Marvel Character Names
 ```
 
 This is useful for creating a clean parent menu for several modular or alternative options.
@@ -315,7 +403,6 @@ author=YourName
 homepage=https://www.nexusmods.com/
 screenshot=preview.jpg
 category=Character Select
-category=BattleHUD
 MenuPriority=10
 ```
 
@@ -331,7 +418,7 @@ DummyMod=True
 An addon could then use:
 
 ```ini
-name=Marvel Character Names - Battle HUD
+name=Marvel Character Names - DLC Characters
 version=v1.0
 AddonFor=Marvel Character Names
 MenuPriority=10
