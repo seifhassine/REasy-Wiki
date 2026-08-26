@@ -4,6 +4,10 @@
 
 REasy can package a project directly into a ZIP suitable for use with **Fluffy Mod Manager**.
 
+<p align="left">
+  <img src="../media/REEasy_Project_Browser_Export_Fluffy_Options.jpg">
+</p>
+
 This guide covers the built-in REasy export options and the additional `modinfo.ini` settings supported by Fluffy Mod Manager.
 
 ---
@@ -19,6 +23,11 @@ Export Fluffy ZIP
 REasy will package the project into a ZIP that can be installed with Fluffy Mod Manager.
 
 The export settings can be customised by clicking the **cog button** beside `Export Fluffy ZIP`.
+
+
+<p align="left">
+  <img src="../media/REEasy_Project_Browser_Export_Fluffy_Settings.jpg">
+</p>
 
 Available options include:
 
