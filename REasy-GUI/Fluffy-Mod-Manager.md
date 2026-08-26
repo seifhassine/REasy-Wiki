@@ -595,6 +595,10 @@ Battlehud Portraits Colour
 ├─ C1 Battlehud Colour (Full)
 ```
 
+<p align="left">
+  <img src="../media/FMM_BundleOrAdd_submenu_example01.jpg">
+</p>
+
 Later, another addon can be released separately:
 
 ```ini
@@ -668,6 +672,10 @@ Battlehud Portraits Colour
    ├─ Chun Li C1-C4
    └─ ...
 ```
+
+<p align="left">
+  <img src="../media/FMM_BundleOrAdd_submenu_example02.jpg">
+</p>
 
 Each of those character entries can also be another `DummyMod` if an additional submenu is required beneath it.
 
