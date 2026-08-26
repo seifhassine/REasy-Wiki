@@ -93,7 +93,7 @@ Before publishing a mod, it is recommended to remove:
 
 ---
 
-# Advanced `modinfo.ini`
+# Advanced `modinfo.ini` (outside REeasy)
 
 Fluffy Mod Manager can read additional information from a file named:
 
@@ -512,26 +512,221 @@ For example:
 
 ## `AddonFor=`
 
-Use:
+`AddonFor=` is used when a mod should appear underneath another mod as an optional addon.
+
+This is especially useful when you already have a main mod installed and want to release additional options later as separate ZIP archives.
+
+The addon does not need to be included inside the original mod archive.
+
+The important part is that:
 
 ```ini
-AddonFor=Main Mod Name
+AddonFor=
 ```
 
-when a mod is an optional addon for another mod.
+must match the parent mod's:
 
-The value should match the main mod's `name=` entry.
+```ini
+name=
+```
+
+exactly.
+
+---
+
+### Basic Example
+
+Main mod:
+
+```ini
+name=Battlehud Portraits Colour
+```
+
+A separate addon can then use:
+
+```ini
+name=Alternative Portraits
+AddonFor=Battlehud Portraits Colour
+```
+
+When both mods are present in Fluffy Mod Manager, the addon will be grouped underneath:
+
+```text
+Battlehud Portraits Colour
+└─ Alternative Portraits
+```
+
+This makes `AddonFor=` useful for releasing additional options after the main mod has already been published.
+
+---
+
+## Using `AddonFor=` with `DummyMod=True`
+
+`AddonFor=` becomes particularly useful when you want to create several levels of submenus.
+
+In this case, `DummyMod=True` can be used to create a menu entry that does not install any game files itself.
+
+For example, the main menu entry could use:
+
+```ini
+name=Battlehud Portraits Colour
+DummyMod=True
+```
+
+This creates the parent menu:
+
+```text
+Battlehud Portraits Colour
+```
+
+You can then add options underneath it.
+
+For example, a complete preset could use:
+
+```ini
+name=C1 Battlehud Colour (Full)
+AddonFor=Battlehud Portraits Colour
+```
+
+Fluffy Mod Manager will display:
+
+```text
+Battlehud Portraits Colour
+├─ C1 Battlehud Colour (Full)
+```
+
+Later, another addon can be released separately:
+
+```ini
+name=Customise
+AddonFor=Battlehud Portraits Colour
+```
+
+Fluffy Mod Manager will automatically place it beneath the same parent:
+
+```text
+Battlehud Portraits Colour
+├─ C1 Battlehud Colour (Full)
+└─ Customise
+```
+
+The original main mod does not need to be repackaged just to add this new option.
+
+---
+
+## Creating Another Submenu
+
+An addon can also act as another parent menu.
 
 For example:
 
 ```ini
-name=Marvel Character Names - Battle HUD
-AddonFor=Marvel Character Names
+name=Customise
+AddonFor=Battlehud Portraits Colour
+DummyMod=True
 ```
 
-Fluffy Mod Manager will then organise the addon underneath the main mod rather than displaying it as a completely separate top-level entry.
+This gives:
 
-Addons can also contain their own addons, allowing nested mod menus.
+```text
+Battlehud Portraits Colour
+├─ C1 Battlehud Colour (Full)
+└─ Customise
+```
+
+Additional mods can then use:
+
+```ini
+AddonFor=Customise
+```
+
+For example:
+
+```ini
+name=Ryu C1-C3
+AddonFor=Customise
+```
+
+```ini
+name=Cammy C1-C4
+AddonFor=Customise
+```
+
+```ini
+name=Chun Li C1-C4
+AddonFor=Customise
+```
+
+The resulting menu can look like:
+
+```text
+Battlehud Portraits Colour
+├─ C1 Battlehud Colour (Full)
+└─ Customise
+   ├─ Ryu C1-C3
+   ├─ Cammy C1-C4
+   ├─ Chun Li C1-C4
+   └─ ...
+```
+
+Each of those character entries can also be another `DummyMod` if an additional submenu is required beneath it.
+
+This allows fairly complex mod installers to be built using only:
+
+```ini
+name=
+AddonFor=
+DummyMod=True
+```
+
+---
+
+## Example Folder / Archive Layout
+
+These addons can be distributed together:
+
+```text
+Battlehud Portraits Colour/
+├─ Main Menu/
+├─ C1 Battlehud Colour (Full)/
+└─ Customise/
+```
+
+or released as completely separate ZIP files:
+
+```text
+Battlehud Portraits Colour.zip
+C1 Battlehud Colour Full.zip
+Customise.zip
+```
+
+As long as the `AddonFor=` value matches the existing parent `name=`, Fluffy Mod Manager can organise them into the same menu structure.
+
+---
+
+## `NameAsBundle=` vs `AddonFor=`
+
+Both can create grouped menus, but they are useful in different situations.
+
+| Option | Best Used For |
+|---|---|
+| `NameAsBundle=` | Grouping several equal, self-contained mods together |
+| `AddonFor=` | Adding optional mods beneath a specific parent mod |
+| `AddonFor=` + `DummyMod=True` | Creating nested menus and structured installers |
+
+A simple way to think of it is:
+
+```text
+NameAsBundle=
+    ↓
+Group these mods together
+
+AddonFor=
+    ↓
+This mod belongs underneath that mod
+```
+
+`AddonFor=` is particularly useful for mods that will continue to receive new optional components after release.
 
 ---
 
