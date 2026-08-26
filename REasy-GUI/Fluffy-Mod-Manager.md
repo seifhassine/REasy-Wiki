@@ -377,6 +377,27 @@ This can link to:
 
 ---
 
+## `NameAsBundle=`
+
+`NameAsBundle=` can group several related mods under one menu button as seen with the Plus icon.
+
+<p align="left">
+  <img src="../media/FMM_BundleOrAdd_Plus_Icon.jpg">
+</p>
+
+For example:
+
+```ini
+NameAsBundle=Comic Art Portraits
+```
+
+If several mods use the same bundle name, Fluffy Mod Manager can organise them together.
+
+This is useful for collections of related alternatives where there is no single main mod to use with `AddonFor=`.
+
+---
+
+
 ## `AddonFor=`
 
 Use:
@@ -399,22 +420,6 @@ AddonFor=Marvel Character Names
 Fluffy Mod Manager will then organise the addon underneath the main mod rather than displaying it as a completely separate top-level entry.
 
 Addons can also contain their own addons, allowing nested mod menus.
-
----
-
-## `NameAsBundle=`
-
-`NameAsBundle=` can group several related mods under one menu button.
-
-For example:
-
-```ini
-NameAsBundle=Comic Portrait Collection
-```
-
-If several mods use the same bundle name, Fluffy Mod Manager can organise them together.
-
-This is useful for collections of related alternatives where there is no single main mod to use with `AddonFor=`.
 
 ---
 
