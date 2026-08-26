@@ -379,21 +379,133 @@ This can link to:
 
 ## `NameAsBundle=`
 
-`NameAsBundle=` can group several related mods under one menu button as seen with the Plus icon.
+`NameAsBundle=` groups several related mods under one expandable menu in Fluffy Mod Manager.
+
+A bundled group is shown with a **Plus icon**, which can be expanded to reveal the individual mod options.
 
 <p align="left">
   <img src="../media/FMM_BundleOrAdd_Plus_Icon.jpg">
 </p>
 
+For example, **Comic Art Portraits** is split into four separate mod options:
+
+```text
+Character Select
+BattleHUD
+CFN and Devices
+Remove Cart Icon on Character Select
+```
+
+In Fluffy Mod Manager these appear grouped together beneath one expandable entry.
+
+A typical bundled ZIP would be organised like this:
+
+```text
+Comic Art Portraits/
+├─ Character Select/
+│  ├─ modinfo.ini
+│  └─ natives/
+│
+├─ BattleHUD/
+│  ├─ modinfo.ini
+│  └─ natives/
+│
+├─ CFN and Devices/
+│  ├─ modinfo.ini
+│  └─ natives/
+│
+└─ Remove Cart/
+   ├─ modinfo.ini
+   └─ natives/
+```
+
+Each folder is effectively its own mod.
+
+The `natives` folder contains the files for that specific part of the mod, while the `modinfo.ini` beside it contains the Fluffy Mod Manager information for that entry.
+
 For example:
+
+```text
+Character Select/
+├─ modinfo.ini
+└─ natives/
+```
+
+The `modinfo.ini` inside each bundled mod should contain the same:
 
 ```ini
 NameAsBundle=Comic Art Portraits
 ```
 
-If several mods use the same bundle name, Fluffy Mod Manager can organise them together.
+For example:
 
-This is useful for collections of related alternatives where there is no single main mod to use with `AddonFor=`.
+
+### Character Select
+
+```ini
+name=Character Select
+NameAsBundle=Comic Art Portraits
+```
+
+### BattleHUD
+
+```ini
+name=BattleHUD
+NameAsBundle=Comic Art Portraits
+```
+
+### CFN and Devices
+
+```ini
+name=CFN and Devices
+NameAsBundle=Comic Art Portraits
+```
+
+### Remove Cart
+
+```ini
+name=Remove Cart Icon on Character Select
+NameAsBundle=Comic Art Portraits
+```
+
+Because all four mods use exactly the same:
+
+```ini
+NameAsBundle=Comic Art Portraits
+```
+
+Fluffy Mod Manager groups them beneath one expandable **Comic Art Portraits** entry.
+
+<p align="left">
+  <img src="../media/FMM_BundleOrAdd_submenu_example.jpg">
+</p>
+
+In simple terms:
+
+```text
+Bundled ZIP
+    ↓
+Several separate mod folders
+    ↓
+Each folder has its own modinfo.ini + natives
+    ↓
+All modinfo.ini files use the same NameAsBundle=
+    ↓
+Fluffy groups them together under one Plus icon
+```
+
+This is useful when a mod contains several related parts that the user may want to enable independently.
+
+For example:
+
+- Character portraits
+- Battle HUD
+- CFN artwork
+- Menu changes
+- Optional removals
+- Alternative versions
+
+`NameAsBundle=` is particularly useful when there is no single required base mod and each option can be enabled or disabled separately.
 
 ---
 
