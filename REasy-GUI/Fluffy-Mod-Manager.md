@@ -186,7 +186,69 @@ A reasonably sized JPG is recommended so the preview image does not unnecessaril
 
 ## `category=`
 
-A mod can be placed into one or more Fluffy Mod Manager categories.
+Fluffy Mod Manager has a built-in category system for supported games.
+
+Each game can have its own preset categories. These can include character-specific categories and broader groups such as:
+
+```text
+Characters
+Stages
+Sound
+Music
+Models
+Textures
+Misc
+```
+
+The exact category list varies between games.
+
+Fluffy Mod Manager will normally scan the files contained in a mod and try to determine the most suitable category automatically.
+
+A mod author can override this by using:
+
+```ini
+category=
+```
+
+### Using a Preset Category
+
+If the category matches one of Fluffy Mod Manager's recognised preset categories, the mod can be placed directly into that category tree.
+
+For example:
+
+```ini
+category=!Characters > Ryu
+```
+
+places the mod under:
+
+```text
+Characters
+└─ Ryu
+```
+
+Another example:
+
+```ini
+category=!Other > Textures
+```
+
+places the mod under:
+
+```text
+Other
+└─ Textures
+```
+
+It is generally good practice to use the game's existing preset categories where possible. This keeps mods organised consistently for the end user.
+
+---
+
+### Custom Categories Become Tags
+
+If the value used with `category=` does **not** match a recognised preset category, Fluffy Mod Manager does not create a new category.
+
+Instead, that value is added to the mod as a **Tag**.
 
 For example:
 
@@ -195,9 +257,96 @@ category=BattleHUD
 category=Character Select
 ```
 
-Multiple `category=` entries can be used in the same `modinfo.ini`.
+does not create new `BattleHUD` or `Character Select` folders in the main category list.
 
-Categories are useful for organising larger mod collections.
+Instead, the mod receives the tags:
+
+```text
+BattleHUD
+Character Select
+```
+
+These can be found in Fluffy Mod Manager under:
+
+```text
+Filter mods
+    ↓
+Tags
+```
+
+This can be useful for adding more specific labels that do not exist in the game's normal preset categories.
+
+For example, Street Fighter 6 mods could use tags such as:
+
+```ini
+category=BattleHUD
+category=BattleUI
+category=Character Select
+category=Quick Startup
+category=VFX
+```
+
+Multiple `category=` entries can be added to the same mod, allowing a mod to appear under several Tags.
+
+For example:
+
+```ini
+category=BattleHUD
+category=Character Select
+category=Characters
+```
+
+would give that mod all three Tags.
+
+This gives mod authors two useful ways to organise mods:
+
+```text
+Preset category
+    ↓
+Places the mod into Fluffy's normal category tree
+
+Custom category value
+    ↓
+Creates a Tag for use with Filter mods
+```
+
+---
+
+### Resident Evil 2 Remake Categories
+
+Fluffy Mod Manager currently defines the following preset categories for Resident Evil 2 Remake:
+
+#### Characters
+
+```ini
+category=!Characters > Leon
+category=!Characters > Claire
+category=!Characters > Ada
+category=!Characters > Sherry
+category=!Characters > Hunk
+category=!Characters > Tofu
+category=!Characters > Kendo
+category=!Characters > Irons
+category=!Characters > Ben
+category=!Characters > Annette
+category=!Characters > Enemies
+category=!Characters > Multiple
+```
+
+#### Other
+
+```ini
+category=!Other > RE Framework
+category=!Other > Code Injectors
+category=!Other > Music
+category=!Other > Models
+category=!Other > Textures
+category=!Other > Animation
+category=!Other > Text
+category=!Other > Misc
+```
+
+These are the category names published by FluffyQuack for manually overriding RE2 Remake's automatic category selection.
 
 ---
 
