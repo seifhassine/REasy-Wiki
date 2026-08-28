@@ -2,7 +2,7 @@
 
 # Fluffy Mod Manager Export
 
-REasy can package a project directly into a ZIP suitable for use with **Fluffy Mod Manager**.
+REasy can package a project directly into a ZIP or PAK suitable for use with **Fluffy Mod Manager**.
 
 <p align="left">
   <img src="../media/REEasy_Project_Browser_Export_Fluffy_Options.jpg">
@@ -55,6 +55,19 @@ Build PAK instead of loose folders in Fluffy ZIP
 When enabled, the exported Fluffy ZIP contains a PAK-based mod instead of the normal loose `natives` folder structure.
 
 When disabled, REasy exports the project using the normal loose-file mod structure.
+
+---
+
+## PAK and Loose File are both Supported
+
+Fluffy Mod Manager supports RE Engine mods that contain:
+
+- Multiple PAK files
+- A mixture of PAK files and loose files
+
+This is useful for more complex mods where one archive is not enough, or where part of the mod is better distributed as loose files.
+
+REasy can export projects either as a normal Fluffy ZIP using loose files or as a PAK-based mod.
 
 ---
 
@@ -137,6 +150,7 @@ If `name=` is not supplied, Fluffy Mod Manager will normally use the archive or 
 | `NameAsBundle=` | Groups several related mods under one menu |
 | `MenuPriority=` | Controls ordering inside an addon submenu |
 | `DummyMod=True` | Creates a menu-only parent mod |
+| `requires=True` | Warns the user if a required mod is not installed |
 
 ---
 
