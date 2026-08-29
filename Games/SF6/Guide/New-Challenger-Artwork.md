@@ -434,17 +434,25 @@ The alpha channel should also be preserved, as it is used by the artwork transpa
 
 ---
 
+
 # Convert the Edited DDS Back to TEX
 
 Once the artwork has been edited and saved as DDS, it needs to be converted back into Street Fighter 6's `.tex` format.
 
-A commonly used tool for this is **REtool** by FluffyQuack.
+This is done using **REtool** by FluffyQuack.
 
-For this workflow, the easiest method is to place:
+If you have not already downloaded it, use the [REtool download link](#requirements) listed in the Requirements section.
+
+The downloaded `REtool.rar` archive contains several files and batch scripts, but for this texture conversion workflow you only need:
 
 ```text
 REtool.exe
 ```
+<p align="center"> <img src="../../../media/games-specific/SF6/RETool_Folder_structure.jpg" width="75%"><br> <em>Contents of the REtool archive.</em> </p>
+
+The executable you need is:
+
+<p align="center"> <img src="../../../media/games-specific/SF6/RETool_EXE_example.jpg" width="75%"><br> <em>REtool.exe highlighted inside the archive.</em> </p>
 
 inside the same folder as the DDS you are converting.
 
