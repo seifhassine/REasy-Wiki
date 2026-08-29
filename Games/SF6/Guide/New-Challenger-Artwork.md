@@ -6,6 +6,12 @@ This guide explains how to replace the **Here Comes a New Challenger** character
 
 The artwork is stored as `.tex` files inside the game's PAK archives and can be viewed, exported to DDS, edited and added to a REasy project.
 
+
+<p align="center">
+  <img src="../../../media/games-specific/SF6/REEasy_Next_challenger_Guide_template_05.jpg"><br>
+</p>
+
+
 ---
 
 ## Requirements
