@@ -379,7 +379,6 @@ Capcom provides an official Photoshop template that shows the intended display a
   <img src="../../../media/games-specific/SF6/REEasy_Next_challenger_Guide_template.jpg"><br>
 </p>
 
-
 ### Design Template
 
 [Download the official Design Contest Format](https://www.streetfighter.com/6/buckler/assets/images/artcontest/psd/DesignContest_Format.zip)
@@ -393,6 +392,25 @@ MASKING AREA
 
 This makes it useful even outside the original artwork contest, because the same layout demonstrates how the Challenger artwork is positioned in-game.
 
+## Important: Edit the Extracted DDS, Not the PSD Template
+
+The official Capcom PSD template is provided as a **layout and positioning reference only**.
+
+Do **not** use the 5000 × 5000 PSD as the base file for your replacement texture.
+
+Instead:
+
+1. Export the original New Challenger `.tex` from REasy as DDS.
+2. Open that DDS in your image editor.
+3. Place or create your replacement artwork inside that DDS.
+4. Use the Capcom PSD only to help understand the intended display area, masking area and artwork positioning.
+
+The original New Challenger texture is:
+
+```text
+2048 × 2048
+```
+
 ### Example Kit
 
 Capcom also provides an example kit:
@@ -405,14 +423,24 @@ This includes example artwork showing how illustrations should extend beyond the
 
 ---
 
-## DDS Export Settings
 
+
+
+## DDS Export Settings
+## Before Saving the DDS
+
+Before saving your finished artwork, confirm that the DDS still matches the original texture dimensions:
+
+```text
+Width:  2048 px
+Height: 2048 px
 For these New Challenger textures, use:
 
 ```text
 Texture Type: Color + Alpha
 Compression: BC7 8bpp Fine (sRGB, DX11+)
 Mip Maps: None
+SRGB
 ```
 
 In Intel Texture Works this appears as:
@@ -479,7 +507,7 @@ tex_nextchallenger_esf001_00_00_iam.tex.241101895
 ---
 
 ## Convert with REtool
-
+Before converting, confirm that you are using the edited **2048 × 2048 DDS exported from REasy**, not the 5000 × 5000 PSD template.
 To convert the DDS:
 
 1. Save your finished artwork as DDS using the settings above.
