@@ -21,7 +21,7 @@ Before starting, you will need:
 - [REasy](../../../REasy-GUI/Getting-Started.md)
 - Street Fighter 6 selected as the game in REasy
 - An image editor capable of opening and saving DDS files
-- FluffyQuack's REtool for converting DDS files back to RE Engine `.tex`
+- [FluffyQuack's REtool](https://www.fluffyquack.com/tools/REtool.rar) for converting DDS files back to RE Engine `.tex`
 
 Recommended DDS editing options:
 
