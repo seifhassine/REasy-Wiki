@@ -374,6 +374,11 @@ Capcom's own artwork documentation demonstrates this behaviour:
 
 Capcom provides an official Photoshop template that shows the intended display area and masking area for this artwork.
 
+<p align="center">
+  <img src="../../../media/games-specific/SF6/REEasy_Next_challenger_Guide_template.jpg"><br>
+</p>
+
+
 ### Design Template
 
 [Download the official Design Contest Format](https://www.streetfighter.com/6/buckler/assets/images/artcontest/psd/DesignContest_Format.zip)
