@@ -227,7 +227,7 @@ Once you have found the artwork you want to replace, add it to the project by ei
 
 - Clicking the green `+` icon beside the file
 - Right-clicking the file and choosing **Add to project**
-
+<p align="center"> <img src="../../../media/games-specific/SF6/REeasy_Add_to_project.jpg"> </p>
 This copies the file into the project while preserving its correct game folder structure.
 
 For example:
@@ -258,6 +258,8 @@ With the texture open in REasy, click:
 ```text
 Export DDS
 ```
+
+<p align="center"> <img src="../../../media/games-specific/SF6/REEasy_export_DDS.jpg"> </p>
 
 It is recommended to save the exported DDS beside the corresponding `.tex` file inside the project folder.
 
