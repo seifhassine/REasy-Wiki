@@ -189,6 +189,8 @@ tex_nextchallenger_esf001_00_01_iam.tex.241101895 = C2
 tex_nextchallenger_esf001_00_02_iam.tex.241101895 = C3
 ```
 
+<table> <tr> <td width="33%" align="center"> <img src="../../../media/games-specific/SF6/REeasy_SF6_RYU_01_C2.png" width="30%"><br> <em>C2 / Outfit 2</em> </td> <td width="33%" align="center"> <img src="../../../media/games-specific/SF6/REeasy_SF6_RYU_02_C3.png" width="30%"><br> <em>C3 / Outfit 3</em> </td> <td width="33%" align="center"> <img src="../../../media/games-specific/SF6/REeasy_SF6_RYU_26_C5.png" width="30%"><br> <em>C5 / DriveTech Wear</em> </td> </tr> </table> ```
+
 Ryu does not currently have C4 artwork.
 
 Other commonly used variants include:
@@ -198,12 +200,14 @@ tex_nextchallenger_esf001_01_iam.tex.241101895
 ```
 
 Graffiti artwork.
+<p align="center"> <img src="../../../media/games-specific/SF6/REeasy_SF6_RYU_G.png" width="30%"> </p>
 
 ```text
 tex_nextchallenger_esf001_02_iam.tex.241101895
 ```
 
 Pixel artwork.
+<p align="center"> <img src="../../../media/games-specific/SF6/REeasy_SF6_RYU_P.png" width="30%"> </p>
 
 All characters have these variants.
 
