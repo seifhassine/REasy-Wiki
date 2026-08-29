@@ -159,7 +159,7 @@ The costume-related artwork follows this pattern:
 tex_nextchallenger_esfXXX_00_00_iam
 tex_nextchallenger_esfXXX_00_01_iam
 tex_nextchallenger_esfXXX_00_02_iam
-tex_nextchallenger_esfXXX_00_04_iam
+tex_nextchallenger_esfXXX_00_03_iam
 ```
 
 These correspond to outfit artwork.
@@ -170,7 +170,7 @@ For example:
 00_00 = C1 / Outfit 1
 00_01 = C2 / Outfit 2
 00_02 = C3 / Outfit 3
-00_04 = C4 / Outfit 4
+00_03 = C4 / Outfit 4
 ```
 
 Not every character currently has every outfit.
