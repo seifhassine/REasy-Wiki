@@ -99,7 +99,9 @@ For example, Ryu's artwork is located under:
 ```text
 natives/stm/product/gui/data/character_image/001/new_challenger/
 ```
-
+<p align="center">
+  <img src="../../../media/games-specific/SF6/REEasy_Next_challenger_Guide_01.jpg"><br>
+</p>
 ---
 
 ## Character Codes
@@ -312,6 +314,18 @@ The game overlays:
 Here comes a new challenger!
 RANKED MATCH
 ```
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="../../../media/games-specific/SF6/REEasy_Next_challenger_Guide_template_03.jpg" width="100%"><br>
+      <em>Missing Right Side</em>
+    </td>
+    <td width="50%" align="center">
+      <img src="../../../media/games-specific/SF6/REEasy_Next_challenger_Guide_template_04.jpg" width="100%"><br>
+      <em>Right Side Included</em>
+    </td>
+  </tr>
+</table>
 
 on the left side of the screen, so important parts of the illustration should generally remain toward the centre and right side.
 
@@ -335,13 +349,24 @@ A useful rule is:
 Do not crop the artwork to the visible display box.
 ```
 
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="../../../media/games-specific/SF6/REEasy_Next_challenger_Guide_template_01.jpg" width="100%"><br>
+      <em>Moves from left</em>
+    </td>
+    <td width="50%" align="center">
+      <img src="../../../media/games-specific/SF6/REEasy_Next_challenger_Guide_template_02.jpg" width="100%"><br>
+      <em>To Right</em>
+    </td>
+  </tr>
+</table>
+
 Keep the full illustration intact even when part of it sits outside the area shown on screen.
 
 Capcom's own artwork documentation demonstrates this behaviour:
 
 [Street Fighter 6 New Challenger Artwork Placement Video](https://www.youtube.com/watch?v=X-VW5BLimXo)
-
-> GitHub Markdown does not reliably embed YouTube players directly, so linking the video is the safest option.
 
 ---
 
