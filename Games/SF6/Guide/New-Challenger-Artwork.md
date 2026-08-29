@@ -104,41 +104,35 @@ natives/stm/product/gui/data/character_image/001/new_challenger/
 </p>
 ---
 
+
 ## Character Codes
 
-| Folder | Character |
-|---|---|
-| `001` | Ryu |
-| `002` | Luke |
-| `003` | Kimberly |
-| `004` | Chun-Li |
-| `005` | Manon |
-| `006` | Zangief |
-| `007` | JP |
-| `008` | Dhalsim |
-| `009` | Cammy |
-| `010` | Ken |
-| `011` | Dee Jay |
-| `012` | Lily |
-| `013` | A.K.I. |
-| `014` | Rashid |
-| `015` | Blanka |
-| `016` | Juri |
-| `017` | Marisa |
-| `018` | Guile |
-| `019` | Ed |
-| `020` | E. Honda |
-| `021` | Jamie |
-| `022` | Akuma |
-| `025` | Sagat |
-| `026` | M. Bison |
-| `027` | Terry |
-| `028` | Mai |
-| `029` | Elena |
-| `030` | C. Viper |
-| `031` | Alex |
-| `032` | Ingrid |
-| `033` | Yasmine |
+<table align="center">
+  <tr>
+    <th>Folder</th>
+    <th>Character</th>
+    <th>Folder</th>
+    <th>Character</th>
+  </tr>
+  <tr><td><code>001</code></td><td>Ryu</td><td><code>019</code></td><td>Ed</td></tr>
+  <tr><td><code>002</code></td><td>Luke</td><td><code>020</code></td><td>E. Honda</td></tr>
+  <tr><td><code>003</code></td><td>Kimberly</td><td><code>021</code></td><td>Jamie</td></tr>
+  <tr><td><code>004</code></td><td>Chun-Li</td><td><code>022</code></td><td>Akuma</td></tr>
+  <tr><td><code>005</code></td><td>Manon</td><td><code>025</code></td><td>Sagat</td></tr>
+  <tr><td><code>006</code></td><td>Zangief</td><td><code>026</code></td><td>M. Bison</td></tr>
+  <tr><td><code>007</code></td><td>JP</td><td><code>027</code></td><td>Terry</td></tr>
+  <tr><td><code>008</code></td><td>Dhalsim</td><td><code>028</code></td><td>Mai</td></tr>
+  <tr><td><code>009</code></td><td>Cammy</td><td><code>029</code></td><td>Elena</td></tr>
+  <tr><td><code>010</code></td><td>Ken</td><td><code>030</code></td><td>C. Viper</td></tr>
+  <tr><td><code>011</code></td><td>Dee Jay</td><td><code>031</code></td><td>Alex</td></tr>
+  <tr><td><code>012</code></td><td>Lily</td><td><code>032</code></td><td>Ingrid</td></tr>
+  <tr><td><code>013</code></td><td>A.K.I.</td><td><code>033</code></td><td>Yasmine</td></tr>
+  <tr><td><code>014</code></td><td>Rashid</td><td></td><td></td></tr>
+  <tr><td><code>015</code></td><td>Blanka</td><td></td><td></td></tr>
+  <tr><td><code>016</code></td><td>Juri</td><td></td><td></td></tr>
+  <tr><td><code>017</code></td><td>Marisa</td><td></td><td></td></tr>
+  <tr><td><code>018</code></td><td>Guile</td><td></td><td></td></tr>
+</table>
 
 > `023` and `024` are currently unused as normal character slots.
 
@@ -318,7 +312,8 @@ The game overlays:
 Here comes a new challenger!
 RANKED MATCH
 ```
-<table>
+
+<table align="center">
   <tr>
     <td width="50%" align="center">
       <img src="../../../media/games-specific/SF6/REEasy_Next_challenger_Guide_template_03.jpg" width="100%"><br>
@@ -353,7 +348,7 @@ A useful rule is:
 Do not crop the artwork to the visible display box.
 ```
 
-<table>
+<table align="center"> 
   <tr>
     <td width="50%" align="center">
       <img src="../../../media/games-specific/SF6/REEasy_Next_challenger_Guide_template_01.jpg" width="100%"><br>
