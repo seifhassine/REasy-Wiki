@@ -2,7 +2,7 @@
 
 # REasy GUI Documentation
 
-This section contains guides and documentation for the **REasy graphical user interface**, including initial setup, project workflows and the built-in editors and tools.
+This section contains guides and documentation for the **REasy graphical user interface**, including initial setup, project workflows, supported file types and the built-in editors and tools.
 
 ---
 
@@ -18,7 +18,8 @@ Current features include:
 - Multiple projects open at the same time.
 - Project Library for reopening and managing projects.
 - Opening files directly from PAK archives without extracting them first.
-- 3D viewing of supported meshes and scenes.
+- Viewing supported 3D meshes.
+- Scene Editor for viewing and editing supported `.scn` files.
 - Editing supported RSZ files.
 - RSZ file comparison.
 - Searching across files and PAK archives.
@@ -45,31 +46,67 @@ New to REasy? Start here.
 - [Using Search and Regex](./Using-Search-and-Regex.md)  
   Learn how to search files and paths using simple text filters and regular expressions.
 
+- [Common RE Engine Modding Terms](./RE-Engine-Modding-Terms.md)  
+  Quick-reference guide to common RE Engine terminology including PAK files, `.list` files, RSZ, scenes, prefabs, GameObjects, components and file version suffixes.
+
 ---
 
-## Projects
+## Projects and Mod Exporting
 
 - [Creating a New Project](./Creating-a-New-Project.md)  
   Create a project, select the game and source files, and begin working directly with files from the game's PAK archives.
 
+- [Fluffy Mod Manager](./Fluffy-Mod-Manager.md)  
+  Package and export REasy projects for Fluffy Mod Manager, including `modinfo.ini`, categories, addons, bundles and mod archive structure.
+
 ---
 
-## Editors and Tools
+## Tools
 
-### Tools
+REasy includes a collection of tools for working with RE Engine game archives and resources.
 
-- [PAK Browser](./PAK-Browser.md)  
+- [PAK Browser](./Tools/PAK-Browser.md)  
   Browse, search and extract files directly from RE Engine PAK archives.
 
-- [File List Generator](./File-List-Generator.md)  
+- [File List Generator](./Tools/File-List-Generator.md)  
   Analyse game executables, PAK files and memory dumps to create or improve `.list` files.
 
-### RSZ Editor
+---
 
-- [RSZ Editor (PFB / SCN / User)](./RSZ/RSZ-Editor.md)  
-  View and edit RSZ-based files including `.pfb`, `.scn` and `.user` files.
+## File Types
 
-More documentation will be added over time.
+Documentation covering RE Engine file formats supported by REasy is available in the File Types section.
+
+- [File Types](./File-Types/Contents)  
+  Information about individual RE Engine formats, their purpose and the editing support available in REasy.
+
+---
+
+## RSZ Editor
+
+REasy can open and edit RSZ-based `.pfb`, `.scn` and `.user` files.
+
+- [RSZ Editor](./RSZ/RSZ-Editor.md)  
+  Introduction to the RSZ Editor and its main interface.
+
+- [GameObjects](./RSZ/RSZ-Editor-GameObjects.md)  
+  Working with GameObjects and their attached components.
+
+- [Folders](./RSZ/RSZ-Editor-Folders.md)  
+  Understanding and working with folders inside RSZ files.
+
+- [Prefabs](./RSZ/RSZ-Editor-Prefabs.md)  
+  Working with prefab references and prefab-based objects.
+
+- [Resources](./RSZ/RSZ-Editor-Resources.md)  
+  View and manage resource references used by RSZ objects.
+
+- [Text Finder](./RSZ/RSZ-Editor-TextFinder.md)  
+  Search text and values throughout an RSZ file.
+
+---
+
+More documentation will be added as REasy continues to develop.
 
 ---
 
